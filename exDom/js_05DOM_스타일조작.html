@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+window.onload = function (){
+  var output = '';
+  for(var i=0; i<255;i++){ //div 배열에 255개가 들어감 index는 254까지
+    output += '<div></div>'
+  }
+  document.body.innerHTML =output;
+
+
+  var divs = document.querySelectorAll('div');
+  for(var i=0;i<divs.length;i++){
+    var div = divs[i]
+    div.style.height = '3px';
+    div.style.background = 'rgb('+ i + ',' + i + ',' + i +')'; //숫자가 크면 클수록 하얘진다.
+  }
+}
+
+window.onload = function{
+  var output = '';
+  for(let i =0; i <255 ; i++){
+    output += '<div></div>'
+  }
+  document.innerHTML = output;
+
+  var divs = document.querySelectorAll('output')
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

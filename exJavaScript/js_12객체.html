@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script type="text/javascript">
+    //배열선언: 요소에 접근할 때 인덱스 번호를 이용
+    var car = ['kia', 'hyndai', 'samsung', function() {
+      alert('배열brrr');
+    }];
+    document.write(car[0] + "<br>");
+    document.write(car[3]() + "<br>");
+
+    document.write("<hr>")
+
+    // 객체선언: 요소에 접근할 때 키를 이용
+    var car = {
+      wheel: 4,
+      maker: 'hyndai',
+      drive: function() {
+        alert( this.maker +''+'brrr');
+      },
+      'engine oil': '불스원샷'
+    };
+    document.write(typeof(car) + "<br>");
+    document.write(car.maker + "<br>");
+    document.write(car['drive']() + "<br>");
+    document.write(car['engine oil'] + "<br>");
+
+    document.write("<hr>")
+
+    for (var k in car) {
+      document.write(k + ':' + car[k] + "<br>");
+    }
+
+
+
+
+
+
+  </script>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

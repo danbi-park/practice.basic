@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script type="text/javascript">
+      var input;
+      if(input) console.log(input + ' 출력'); //undefined 출력안됨
+
+      input = 0;
+      if(input) console.log(input + ' 출력'); //출력안됨
+
+      input = -100;
+      if(input) console.log(input + ' 출력'); //출력됨
+
+      input = '';
+      if(input) console.log(input + ' 출력'); //출력안됨
+
+      input = 'hello';
+      if(input) console.log(input + ' 출력'); //출력됨
+
+
+      //논리부정
+      input = false;
+      if (!input) console.log(input + ' 출력'); //출력됨
+
+      input = true;
+      if(!input) console.log(input + ' 출력'); //출력안됨
+
+
+      var date = new Date();
+      var year = date.getFullYear();
+      var month = date.getMonth()+1;
+      var day = date.getDate();
+      var week = date.getDay();
+
+      var weekTemp = '';
+      if(week == 0) weekTemp = '일';
+      else if(week == 1) weekTemp = '월';
+      else if(week == 2) weekTemp = '화';
+      else if(week == 3) weekTemp = '수';
+      else if(week == 4) weekTemp = '목';
+      else if(week == 5) weekTemp = '금';
+      else if(week == 6) weekTemp = '토';
+      else weekTemp = '해당요일이 없습니다.'
+
+      console.log(year + '년 ' + month + '월 ' + day + '일 ' + weekTemp + '요일')
+      console.log(weekTemp + '요일')
+
+
+      if(year > 2000)
+      console.log('커요!');
+      else
+      console.log('작아요!');
+
+
+
+
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

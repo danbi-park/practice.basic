@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+    div {
+      width: 100px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      color: white;
+      background: teal;
+      border-radius: 20px;
+    }
+    div.hover{
+      opacity: 0.5;
+      cursor: pointer;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    // $(function(){
+    //     $('div').hover(
+    //       function(){$(this).addClass('hover');},
+    //       function(){$(this).removeClass('hover');}
+    //     );
+    // });
+
+    //선생님 풀이
+    $(function(){
+      var colors = ['red','green','blue']
+      var idx = 0;
+        $('div').hover(
+          function(){$(this).animate({opacity:0.5},300);},
+          function(){$(this).animate({opacity:1},300);}
+        ).on('click',function(e){
+          $(this).css('background',colors[++idx % 3]);//idx가 증가할 때마다 /3이되어 나머지가 바뀌는 것임
+        });
+    });
+
+
+
+
+
+  </script>
+</head>
+
+<body>
+  <div>버튼</div>
+</body>
+
+</html>

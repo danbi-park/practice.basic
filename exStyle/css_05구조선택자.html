@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+  ul{
+    list-style: none;
+  }
+  li{
+    display:inline-block;
+    width:120px;
+    height: 40px;
+    line-height:40px;
+    font-size: 20pt;
+    background:lightgray;
+    text-align: center;
+  }
+  /* 짝수 */
+  li:nth-of-type(2n){
+    background: pink;
+  }
+  /* 홀수 */
+  li:nth-of-type(2n+1){
+    background: red;
+  }
+  li:first-of-type{
+    border-radius: 20px 0 0 20px;
+  }
+  li:last-of-type{
+    border-radius: 0 20px 20px 0;
+  }
+
+  </style>
+
+</head>
+
+<body>
+  <ul>
+    <li>첫번째</li>
+    <li>두번째</li>
+    <li>세번째</li>
+    <li>네번째</li>
+    <li>다섯번째</li>
+  </ul>
+
+
+
+
+</body>
+
+</html>

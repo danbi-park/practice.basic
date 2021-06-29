@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      *{
+        margin:0;
+        padding:0;
+      }
+      .box{
+        background: black;
+        margin:5px;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script>
+      $(function(){
+        for(var i=0;i<100;i++){
+          $('<div></div>').addClass('box').css({
+            width:100,
+            height: Math.floor(Math.random() * 100) + 50, //50부터 150사이에 높이가 들쑥날쑥
+            backgroundImage: 'url(../images/' + (i % 15) + '.png)',
+            backgroundSize: 'cover'
+          }).appendTo('body');
+        }
+
+        $('body').masonry({
+          columnwidth: 110
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+  </body>
+</html>

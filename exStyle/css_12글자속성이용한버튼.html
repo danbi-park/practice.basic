@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>글자속성이용</title>
+    <style media="screen">
+      .big_font{
+        font-size: 2em;
+        font-weight:bold;
+        font-style:italic;
+      }
+      .button{
+        display:inline-block;
+        width:150px;
+        height:70px;
+        /* line-height:67px; */
+        /* vertical-align을 쓰기도 한다.
+        vertical-align:middle */
+        background: #ff6a00;
+        border:10px solid #fff;
+        border-radius: 30px;
+        box-shadow: 5px 5px 5px #a9a9a9;
+        cursor: pointer;
+        text-align: center;
+        font-size:30px;
+      }
+      .button:hover{
+        background:rgba(255, 122, 0, 0.6);
+      }
+      span{
+        vertical-align: sub;
+      }
+
+
+    </style>
+
+    <script type="text/javascript">
+      window.onload = function() {
+        document.getElementById('btn').onmousedown=function(){
+        document.getElementById('btn').style.boxShadow=
+        "0 0 0 0000";
+        location.href="http://www.google.com"
+        }
+
+        document.getElementById('btn').onmouseup=function(){
+        document.getElementById('btn').style.boxShadow=
+        "5px 5px 5px #a9a9a9";
+        }
+
+        document.getElementById('btn').onmouseout=function(){
+        document.getElementById('btn').style.boxShadow=
+        "5px 5px 5px #a9a9a9";
+        }
+      }
+
+    </script>
+
+
+
+  </head>
+  <body>
+    <div id="btn" class="button big_font">
+      <span>Click</span>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script>
+
+    // //인라인 이벤트 모델
+    // function goJoin() {
+      //   document.body.innerHTML = "<h1>welcome!</h1>";
+      // }
+
+
+    // onload → 이벤트 속성, load → 이벤트 타입, function → listner, handler
+    window.onload = function() {
+      //고전 이벤트 모델
+      var btn = document.querySelector('button');
+      btn.onclick = function() {
+        this.textContent += '★';
+      }
+
+
+      var btn = document.querySelector('button');
+      var star = document.querySelector('h1');
+      var cnt = 0;
+      var sign = 1;
+
+      btn.onclick = function(){
+        if(cnt==5) sign = -1;
+        if(cnt==0) sign = 1;
+        cnt = cnt + sign; //여기에 계속 1이 있기 때문에 누적이 됨.
+        console.log(cnt);
+        star.textContent = ''; //text를 없애고 다시 별을 채우기 위해
+        for(var i=0; i<cnt; i++) {star.textContent += '★';}
+        for(var i=cnt; i<5; i++) {star.textContent += '☆';}
+    }
+  }
+
+  </script>
+</head>
+
+<body>
+  <h1>☆☆☆☆☆</h1>
+  <button type="button" name="button" onclick="goJoin()">별점주기</button>
+</body>
+
+</html>

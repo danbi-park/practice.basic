@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    label,input {display: block;}
+    input.text {margin-bottom: 12px;width: 95%;padding: .4em;}
+    fieldset {padding: 0;border: 0;margin-top: 25px;}
+    h1 {font-size: 1.2em;margin: .6em 0;}
+    div#users-contain {width: 350px;argin: 20px 0;}
+    div#users-contain table {margin: 1em 0;border-collapse: collapse;width: 100%;}
+    div#users-contain table td,div#users-contain table th {
+      border: 1px solid #eee;padding: .6em 10px;text-align: left;}
+    .ui-dialog .ui-state-error {padding: .3em;}
+    .validateTips {border: 1px solid transparent;padding: 0.3em;}
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    function delCell(row) {
+      var table = document.querySelector("#users tbody");
+      try {
+    		var temp = row.rowIndex -1;
+    		table.deleteRow(temp);
+    	} catch (ex) { alert(ex); }
+    }
+
+    $(function() {
+      var cnt = 0;
+      var dialog, form,
+          name = $( "#name" ),mobile = $( "#mobile" );
+
+      var allFields = $( [] ).add( name ).add( mobile );
+
+      var addUser = function(){
+        allFields.removeClass( "ui-state-error" );
+        var del = '<button onclick="delCell(this.parentNode.parentNode)">삭제</button>';
+
+        $( "#users tbody" ).append( "<tr>" +
+          "<td>" + ++cnt + "</td>" +
+          "<td>" + name.val() + "</td>" +
+          "<td>" + mobile.val() + "</td>" +
+          "<td>" + del + "</td>" +
+        "</tr>" );
+        dialog.dialog( "close" );
+      };
+      dialog = $( "#dialog-form" ).dialog({
+        autoOpen: false,
+        height: 400,
+        width: 350,
+        modal: true,
+        buttons: {
+          "Create an account": addUser,
+          Cancel: function() {
+            dialog.dialog( "close" );
+          }
+        },
+        close: function() {
+          form[ 0 ].reset();
+          allFields.removeClass( "ui-state-error" );
+        }
+      });
+      form = dialog.find( "form" ).on( "submit", function( event ) {
+        event.preventDefault();
+        addUser();
+      });
+      document.querySelector('button').onclick = function() {
+        dialog.dialog( "open" );
+      };
+    });
+  </script>
+</head>
+
+<body>
+  <button type="button" name="button">추가</button>
+  <div id="users-contain" class="ui-widget">
+    <table id="users" width="500" class="ui-widget ui-widget-content">
+      <thead>
+        <tr class="ui-widget-header ">
+          <th>No</th>
+          <th>이름</th>
+          <th>전화번호</th>
+          <th>삭제</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div id="dialog-form" title="Create new user">
+    <p class="validateTips">All form fields are required.</p>
+    <form>
+      <fieldset>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="" class="text ui-widget-content ui-corner-all">
+        <label for="mobile">Mobile</label>
+        <input type="text" name="mobile" id="mobile" value="" class="text ui-widget-content ui-corner-all">
+
+        <!-- Allow form submission with keyboard without duplicating the dialog button -->
+        <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+      </fieldset>
+    </form>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(function() {
+      $('a').click (function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      // return false;
+
+        alert('hello');
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div>
+    <a href="http://google.com">Click</a>
+  </div>
+</body>
+</html>

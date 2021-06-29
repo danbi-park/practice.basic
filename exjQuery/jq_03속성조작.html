@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>속성조작</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+
+    $( function(){
+    /*var src = $('script').attr('src');
+      alert(src); //주소가 나옴
+      $('script').each(function(i, item){
+      alert(i + '번: ' + $(item).attr(src));
+    //undefined 가 나옴 이 script안에 src가 없기 때문에 !
+      }); */
+
+      //복수개의 개체에 한개의 속성을 적용할 때
+      // $('img').attr('src',"http://placehold.it/200x100");
+
+      //복수개의 개체에 복수개의 속성을 적용할 때
+      //개체에 대하여 넓이, 높이, src 속성을 한 번에 적용가능
+      // $('img').attr({'src':"http://placehold.it/200x100", width:300, height:200});
+
+
+      // $('img').each(function(i, item){
+      //   //alert(i+"번: "+$(item).attr('src'));
+      //   $(item).attr('src','http://placehold.it/100x'+ ++i*50);
+      //   $(item).attr('alt',++i*50+"image");
+      //   alert
+      // });
+
+
+
+//     $('img').attr('src',function(index){
+//       var size= ++index * 50;
+//       return 'http://placehold.it/100x' + size; //반드시 return이 붙어야 한다.
+//     });
+
+  $('img').attr({
+    alt: 'jQuery 라이브러리 사용한 속성 지정', //값이 바로 들어감
+    src: function(idx){
+      var size = ++idx * 50;
+      return "http://placehold.it/" + size + 'x100';
+    } //함수가 들어가서 값을 반환 시켜야함 
+  });
+
+
+
+
+
+ });
+
+  </script>
+
+
+
+</head>
+
+<body>
+  <img src="" alt="">
+  <img src="" alt="">
+  <img src="" alt="">
+</body>
+
+</html>

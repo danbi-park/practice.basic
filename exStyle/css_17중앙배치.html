@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>중앙배치</title>
+  <style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    .outbox {
+      width: 300px;
+      height: 200px;
+      background: rgba(166, 238, 255, 0.7);
+      position: relative;
+      top: 50%;
+      left: 50%;
+      margin-top: -100px;
+      margin-left: -150px;
+      text-align:center;
+      /* block, inline-block이어야한다. */
+      line-height:197px;
+    }
+
+    .inbox {
+      background:rgb(215, 165, 9);
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="outbox">
+      <span class="inbox">
+        중앙정렬
+    </span>
+  </div>
+
+</body>
+
+</html>

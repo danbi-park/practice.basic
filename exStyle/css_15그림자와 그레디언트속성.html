@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>그림자와 그레디언트속성</title>
+
+  <style media="screen">
+    #text-shadow {
+      text-shadow: 2px 2px 2px gray;
+      background: rgb(255, 175, 194);
+      box-shadow: 5px 5px 10px rgb(162, 83, 83);
+    }
+
+    #box-shadow {
+      height:100px;
+      background: rgb(254,187,187);
+      background: -moz-linear-gradient(45deg,  rgba(254,187,187,1) 0%, rgba(254,144,144,1) 45%, rgba(255,92,92,1) 100%);
+      background: -webkit-linear-gradient(45deg,  rgba(254,187,187,1) 0%,rgba(254,144,144,1) 45%,rgba(255,92,92,1) 100%);
+      background: linear-gradient(45deg,  rgba(254,187,187,1) 0%,rgba(254,144,144,1) 45%,rgba(255,92,92,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febbbb', endColorstr='#ff5c5c',GradientType=1 );
+
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <div class="">
+    <span id="text-shadow">Lorem ipsum dolor sit amet, consectetur adipisicing elit</span><br><br>
+    <span id="box-shadow">Lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+  </div>
+
+</body>
+
+</html>

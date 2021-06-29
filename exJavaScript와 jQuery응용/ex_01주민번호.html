@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+  window.onload = function(){
+   var numRegExp = new RegExp(/[0-9]$/g);
+
+   var input_1 = document.getElementById('input_1').value;
+   var input_2 = document.getElementById('input_2').value;
+}
+
+function keyup() {
+  var input_1 = document.getElementById('input_1').value;
+  function(e){numCheck(e,numRegExp,this);}
+
+  var input_2 = document.getElementById('input_2').value;
+  function(e){numCheck(e,numRegExp,this);}
+}
+
+
+function keypress() {
+  var input_1 = document.getElementById('input_1').value;
+  function(e){numCheck(e,numRegExp,this);}
+
+  var input_2 = document.getElementById('input_2').value;
+  function(e){numCheck(e,numRegExp,this);}
+}
+
+
+function numCheck(e,numRegExp,item){
+    if(item.getElementById('input_1') == input_2.getElementById('input_2')
+      && item.val().length == 0){
+        input_1.focus();
+    }
+    if(numRegExp.test(item.val())) {
+      if(item).getElementById('input_1') == $('#mobile1').attr('id')
+        && $(item).val().length >3){
+          $('#mobile2').focus();
+      }
+    } else {
+      $(item).val($(item).val().replace(/[^0-9]/g,''));
+    }
+}
+  </script>
+</head>
+
+<body>
+  <form class="" action="index.html" method="post">
+    <input type="text" id="input_1" name="input_1" maxlength="6" value="">
+    <span>-</span>
+    <input type="text" id="input_2" name="input_2" maxlength="7" value="">
+    <button type="submit" name="button">확인</button><br>
+  </form>
+</body>
+
+</html>

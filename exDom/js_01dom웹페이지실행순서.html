@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dom 웹페이지 실행 순서</title>
+    //Document Object Model
+    
+  <script type="text/javascript">
+    alert(1);
+    window.onload = function(){
+            //메서드, getElementById('id')같이 잘 쓰인다. 단수만 선택가능 !
+    document.querySelector('h1').style.backgroundColor = 'red';
+    document.querySelector('h2').style.color = 'red';
+    alert(3);
+   }
+  </script>
+  </head>
+  <body>
+    <h1>Process - 1</h1>
+    <h2>Process - 2</h2>
+    <script type="text/javascript">
+      alert(2);
+
+    </script>
+  </body>
+</html>

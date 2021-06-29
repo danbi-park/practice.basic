@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script type="text/javascript">
+    // var input = prompt('cm를 입력하시오');
+    // document.write(input + "cm" + "<br>");
+    // document.write(input/2.54 + "inch" + "<br>");
+    // document.write((input/2.54)/12 + "feet" + "<br>");
+    //
+    // document.write("<hr>");
+
+    // var hbottom = prompt('원기둥 밑면의 반지름을 입력하시오');
+    // var height = prompt('원기둥의 높이를 입력하시오');
+    // document.write('원기둥의 부피는 ');
+    // document.write((hbottom*hbottom*3.14) * height);
+    // document.write(' 입니다.');
+
+    // //선생님 풀이
+    // var input = prompt('반지름과 높이를 입력하시오. 예(5,4)');
+    // var r = parseInt(input.split(",")[0]);
+    // var h = parseInt(input.split(",")[1]);
+    // document.write(r*r*3.14*h);
+
+
+    // document.write("<hr>");
+
+    // var input = prompt('4자리 정수를 입력해주세요','1234');
+    // num1000 = parseInt(input / 1000);
+    // num100 = parseInt(input % 1000 / 100);
+    // num10 = parseInt(input % 100 / 10);
+    // num1 = parseInt(input % 10 / 1);
+    //
+    //
+    // document.write('입력 값 : ' + input + '<br>');
+    // document.write('천의 자리 : ' + num1000 + '<br>');
+    // document.write('백의 자리 : ' + num100 + '<br>');
+    // document.write('십의 자리 : ' + num10 + '<br>');
+    // document.write('일의 자리 : ' + num1 + '<br>');
+
+    // //선생님 풀이
+    // var input = prompt('정수를입력해주세요');
+    // var 천 = parseInt(input % 10000 / 1000);
+    // var 백 = parseInt(input % 1000 / 100);
+    // var 십 = parseInt(input % 100 / 10);
+    // var 일 = parseInt(input % 10 / 1);
+    //
+    // document.write(천 + ',' + 백 + ',' + 십 + ',' + 일);
+    // document.write('<br>');
+    //
+    // //숫자의 길이에 상관없이 각각의 자릿수로 출력
+    //
+    // for (var i = 0, digit = String(input).length ; i < String(input).length ; i++, digit--) {
+    //   var dt = Math.pow(10, digit);
+    //   if (i != 0) document.write(",");
+    //   document.write(parseInt(input % dt / (dt / 10)));
+    // }
+
+
+
+    // document.write("<hr>");
+
+    var input = prompt('태어난 연도를 입력하세요');
+    var tti = input % 12
+    var array = ['원숭이띠','닭띠','개띠','돼지띠','쥐띠','소띠','범띠','토끼띠','용띠','뱀띠','말띠','양띠'];
+
+    document.write(array[tti]);
+
+    document.write("<hr>");
+
+    var week =['sun','mon','the','wed','thu','fri','sat']
+    var date = new Date();
+    document.write(week[date.getDay()]+"<br>");
+
+    var twelvens = ['신','유','슬','해','자','축','인','묘','진','사','오','미']
+    document.write(twelvens[(input%12)]+"<br>");
+
+
+      for(i=0;i<10;i++){
+        for(j=0;j<i+1;j++){
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+
+
+    //   object = {'이름':'C#프로그래밍','초판발행':'2019년 12월 10일','지은이':'윤인성','펴낸이':'김태헌'}
+  </script>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

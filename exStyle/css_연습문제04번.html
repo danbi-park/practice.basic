@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+/* 위부터 아래 순서대로 적용이됨 */
+  .head .head-item{
+    background:red;
+  }
+
+  tr:nth-child(1) td{
+    background: green;
+    color:white;
+  }
+
+  .head-item{
+    background:blue;
+  }
+
+  tr .head-item{
+    background:yellow;
+  }
+
+  .head-item{
+    background:pink;
+  }
+
+  </style>
+
+
+</head>
+
+<body>
+
+<table>
+
+  <tr class="head">
+    <td class= "head-item">lorem</td>
+    <td class= "head-item">lorem</td>
+  </tr>
+  <tr>
+    <td>dolor</td>
+    <td>damte</td>
+</table>
+
+
+
+
+</body>
+
+</html>

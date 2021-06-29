@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"></script>
+    <script>
+      window.onload = function(){
+        var cnt = 0; //run하는 이미지가 01~09라서
+        setInterval(function(){
+          if(cnt == 15) cnt = 0;
+          document.getElementById('run').src = '../images/' + cnt++ + '.png';
+        },60); //숫자가 낮을 수록 빠름
+}
+
+    </script>
+  </head>
+
+  <body>
+    <img id="run" src="" alt="">
+  </body>
+</html>

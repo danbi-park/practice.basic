@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+  <meta charset="utf-8">
+  <title>속성 조작</title>
+  <script>
+    window.onload = function(){
+      var image = document.querySelector('#image');
+      image.src = 'http://placehold.it/300x200';
+      image.width = 300;
+      image.height = 200;
+      image.setAttribute('data-publisher','vstar'); //속성을 저장(속성, 값)
+      console.log(image.dataPublisher); //임의적으로 만든 속성
+      console.log(image.getAttribute('data-publisher'));
+
+      // var clock = document.querySelector('#clock');
+      // setInterval(function(){ //내장함수 1초 간격으로 계속 바뀌는 것 비동기적으로 페이지만 바뀜 (AJAX)
+      //   var date = new Date();
+      //   clock.innerHTML = date.toString(); //시간을 문자로 제공 innerHTML로 넣어
+      // },1000); //ms1000이 1초임
+
+
+
+      var clock = document.querySelector('#clock');
+      clock.innerHTML = getFullDate();
+      setInterval(function(){
+        clock.innerHTML = getFullDate();
+      }, 1000);
+    }
+
+  function getFullDate(){
+    var str = '';
+    var date = new Date();
+    str = date.getFullYear() + "-" + twoDigit(date.getMonth()+1) +
+     "-" + twoDigit(date.getDate()) + " " + getWeek(date.getDay()) + " "
+     + twoDigit(date.getHours()) + ":" + twoDigit(date.getMinutes()) + ":"
+    + twoDigit(date.getSeconds());
+    return str;
+  }
+
+
+    function twoDigit(num){
+      return num < 10 ? "0" + num : num ; //삼항연산자
+    }
+
+    function getWeek(num){
+      var arr = ['일','월','화','수','목','금','토']
+      return arr[num];
+    }
+
+
+
+
+</script>
+
+  </head>
+  <body>
+    <h1 id="clock"></h1>
+<img src="" id="image" alt="">
+  </body>
+</html>

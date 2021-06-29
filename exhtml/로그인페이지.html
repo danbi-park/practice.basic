@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>로그인</title>
+
+  <style>
+  form{
+        margin:0 auto; width:400px;
+  }
+  </style>
+
+
+
+  <script type="text/javascript">
+        window.onload = function(){
+      // 윈도우 객체가 onload를 갖고 있는데 function을 주어 재정의 하는 것임
+                document.getElementById('btnLogin').onclick = function() {
+                        id = document.getElementById('id').value;
+                        pw = document.getElementById('pw').value;
+
+                        if(id == undefined || id ==""){
+                          alert("아이디를 확인해주세요");
+                          document.getElementById('id').focus();
+                          return;
+                        }
+                        if(pw == undefined || pw ==""){
+                          alert("비밀번호를 확인해주세요");
+                          document.getElementById('pw').focus();
+                          return;
+                        }
+                        document.frm.submit();
+                        // 위치도 중요함 onclick 안에 정의가 되어있어야 함
+                    }
+                    // document.frm.submit(); 여기에 있으면 onclick과정을 거치지 않고 바로 frm로 넘어감.
+
+                }
+
+  </script>
+
+</head>
+
+
+<body>
+
+
+
+  <form class="" name="frm" action="index.html" method="post">
+    <fieldset>
+      <legend>로그인</legend>
+
+    ID: <input id="id" type="text" name="id" value="" placeholder="ID">
+    <p style="margin:10px"></p>
+    Password: <input id="pw" type="password" name="pass" value="" placeholder="비밀번호">
+
+    <p style="margin:20px"></p>
+
+    <button type="button" id="btnLogin">로그인</button>
+    <button type="reset">취소</button>
+  </fieldset>
+  </form>
+
+  <p style="margin:10px"></p>
+
+
+
+
+</body>
+
+
+</html>

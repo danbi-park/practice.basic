@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      window.onload = function (){
+      var headers = document.querySelectorAll('h1');
+
+      //일반적인 for문
+      for (var i = 0; i < headers.length;i++){
+        header = headers[i];
+        header.style.backgroundColor = 'red';
+        header.style.color = 'orange';
+        header.innerHTML = 'From JavaScript';
+      }
+
+      // for in 문
+      for (var i in headers){ //여기서 i는 headers의 인덱스임
+        if(i == 'entries' || i == 'keys') break; //selectorAll이기 때문에 부수적인 것들 까지 올라와서 오류를 발생시킴 그래서 이 줄이 필요
+      var item = headers[i];
+      item.style.backgroundColor = 'red';
+      item.style.color = 'orange';
+      item.innerHTML = 'From JavaScript';
+      }
+
+      // for of 문
+      for (var header of headers){ //여기선 header가 요소들임
+      header.style.backgroundColor = 'red';
+      header.style.color = 'orange';
+      header.innerHTML = 'From JavaScript';
+      }
+
+}
+    </script>
+  </head>
+  <body>
+    <h1>header 1</h1>
+    <h1>header 2</h1>
+    <h1>header 3</h1>
+
+      </body>
+    </html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>수평중앙정렬</title>
+
+  <style media="screen">
+    *{
+      margin:0;
+      padding:0;
+    }
+
+    html, body{
+      margin:0 auto;
+      width:960px;
+      height:100%;
+      background:rgba(122, 227, 255, 0.5);
+    }
+
+    .main{
+      height:100%;
+      box-shadow: 2px 0 2px rgb(184, 218, 255), -2px 0 -2px rgb(184, 218, 255);
+      padding:50px;
+    }
+
+    div.container {
+      overflow: hidden;
+      /* overflow에 top이나 left같은 속성값을 입력하지 않으면 자손들이
+      차지하는 너비를 모두 감싸는 특성이 있음 */
+    }
+
+
+    div.item {
+      float: left;
+      margin: 0 3px;
+      padding: 10px;
+      border: 1px solid black;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <div class="main" style="width:960px; background:white;">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="container">
+        <div class="item">매뉴 - 1</div>
+        <div class="item">매뉴 - 2</div>
+        <div class="item">매뉴 - 3</div>
+        <div class="item">매뉴 - 4</div>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+  </div>
+
+
+
+</body>
+
+</html>

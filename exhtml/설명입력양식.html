@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <style>
+
+  </style>
+
+  <script>
+    function send() {
+      name = document.getElementById('name').value;
+      // 선언자    객체       매소드      id값, 매개변수.value//
+      id = document.getElementById('id').value;
+      pw = document.getElementById('pw').value;
+      console.log(name.value);
+
+      if (name == undefined || name == "") {
+        //정의가 되지 않았거나 or(||) 공백이거나 //
+        alert('이름을 확인해주세요');
+        document.getElementById('name').focus();
+        return;
+        //if를 닫을 때 returns//
+      }
+      if (id == undefined || id == "") {
+        alert('아이디를 확인해주세요');
+        document.getElementById('id').focus();
+        return;
+      }
+      if (pw == undefined || pw == "") {
+        alert('비밀번호를 확인해주세요');
+        document.getElementById('pw').focus();
+        return;
+      }
+
+      //document.getElementById('frm').submit();//
+      document.frm.submit();
+      //id를 안넣더라도 form태그에 name을 지정해줘도 됨.
+    }
+  </script>
+</head>
+
+
+<body>
+
+  <a href="index.html?name=LGH&id=LGH&pass=1234">전송</a>
+  <!-- 이런식으로 get을 보낼 수도 있음 -->
+
+  <form class="" name="frm" action="index.html" method="get">
+    <input id="name" type="text" name="name" value="" placeholder="이름"><br>
+    <input id="id" type="text" name="id" value="" placeholder="ID"><br>
+    <input id="pw" type="password" name="pass" value="" placeholder="비밀번호"><br>
+
+    <fieldset style="width:550px;">
+      <legend>선택사항</legend>
+
+      성별:
+      <label for="female">여성</label><input checked id="female" type="radio" name="gender" value="female">
+      <!-- input에선 checked option에서는 selected -->
+      <label for="male">남성</label><input id="male" type="radio" name="gender" value="male"><br>
+
+      취미:
+      <label for="movie">영화감상</label><input id="movie" type="checkbox" name="hobby" value="movie">
+      <label for="game">게임</label><input id="game" type="checkbox" name="hobby" value="game"><br>
+      <!-- hobby나 gender처럼 이름(name)이 같을 경우엔 자동으로 div가 되어 groupping이 됨 -->
+
+    </fieldset>
+
+    <p style="margin:30px;"></p>
+
+    지역: <select class="" name="local">
+      <option value="서울">서울</option>
+      <option value="부산" selected>부산</option>
+      <option value="광주">광주</option>
+    </select>
+
+    제품1: <select class="" name="item">
+      <option value="1" selected>마스크</option>
+      <option value="2">손소독제</option>
+      <option value="3">공기청정기</option>
+    </select>
+
+    브랜드: <select name="item2" class="" multiple size="3">
+      <!-- 여러가지 선택가능한 속성 multiple(ctrl누르고 선택해야 복수선택 2)  size를 1로주면 하나로 합쳐짐-->
+      <option value="1">나이키</option>
+      <option value="2">아디다스</option>
+      <option value="3">데상트</option>
+    </select>
+
+    제품3: <select name="item3" class="">
+      <optgroup label="일회용품">
+        <!-- 그룹만 지어주는 것임  -->
+        <option value="1">마스크</option>
+        <option value="2">손소독제</option>
+      </optgroup>
+
+      <optgroup label="가전제품">
+        <option value="3">공기청정기</option>
+        <option value="4">스타일러</option>
+      </optgroup>
+    </select>
+
+    <textarea name="bigo" rows="8" cols="80"></textarea>
+    <!-- 대량의 텍스트를 넣을 수 있음 (inline속성) -->
+
+
+    <p style="margin:10px"></p>
+    <button type="button" onclick="send()">전송</button>
+    <button type="reset">취소</button>
+
+
+    <!-- 만약 window.onload가 없을 시에는 button에 id="btnLogin" 넣어주고
+ button바로 밑에 스크립트를 넣어두면 null값 오류가 생기지 않음 임베이스코드 라고 함
+  <script type="text/javascript">
+
+// 윈도우 객체가 onload를 갖고 있는데 function을 주어 재정의 하는 것임
+
+    document.getElementById('btnLogin').onclick = function() {
+      id = document.getElementById('id').value;
+      pw = document.getElementById('pw').value;
+
+      if(id == undefined || id ==""){
+        alert("아이디를 확인해주세요");
+        document.getElementById('id').focus();
+        return;
+      }
+      if(pw == undefined || pw ==""){
+        alert("비밀번호를 확인해주세요");
+        document.getElementById('pw').focus();
+        return;
+      }
+      document.frm.submit();
+    }
+
+
+    </script> -->
+
+
+
+  </form>
+
+
+
+
+</body>
+
+</html>

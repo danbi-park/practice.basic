@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      //익명적 함수는 사용하려면 변수처럼 미리 선언되어야 함.
+      var add = function(num1, num2){
+        return (num1 + num2);
+     }
+     document.write(add(1,2));
+
+
+     //선언적 함수는 위치에 상관없이 어디든 호출해서 사용이 가능하다. hoisting
+     function add(num1, num2){
+       return num1 + num2;
+     }
+
+    </script>
+
+
+  </head>
+  <body>
+
+  </body>
+</html>

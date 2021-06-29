@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+<script type="text/javascript">
+
+callback = function(){
+  alert('hello');
+}
+
+function callTen(fnc){
+  for(i=0;i<5;i++){
+    fnc();
+  }
+}
+callTen(
+  function(){
+  alert('hello');
+  },
+  function(){
+  alert('hello');
+  },
+  function(){
+  alert('hello');
+  },
+)
+
+//재귀적 호출 함수 Recursive call 
+function factorial(num) {
+if(num>1){
+  return num * factoral(num-1);
+  } else {
+    return 1;
+  }
+}
+document.write(factorial(3));
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

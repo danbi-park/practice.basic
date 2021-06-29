@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>후손자손동위선택자</title>
+
+  <style>
+
+  div{
+    background: lightgrey;
+
+  }
+  header > h1{
+    background: yellow;
+  }
+
+  input[type=text]~div{
+    background:red;
+    height: 100px;
+  }
+  input[type=text]+div{
+    background:blue;
+    height: 100px;
+  }
+
+
+  </style>
+</head>
+
+<body>
+  <h1>후손자손동위선택자</h1>
+  <header>
+    <h1>first</h1>
+    <input type="text" name="" value="">
+    <div>
+      <h1>second</h1>
+    </div>
+    <div>
+      <h1>third</h1>
+    </div>
+
+  </header>
+
+<!-- 후손 하위레벨 자손 직계 동위는 같은 depth-->
+
+
+
+
+</body>
+
+</html>

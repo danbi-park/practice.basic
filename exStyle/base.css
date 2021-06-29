@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+
+.a{font-size:32px;}
+.b{font-size:2em;}
+.c{font-size:large;}
+.d{font-size:small;}
+.font_a{
+  font-family:궁서;
+}
+.font_b{
+  font-family:'Bradley Hand ITC','바탕체';
+}
+.font_c{
+  font-family: 'Poor Story', cursive;
+
+}
+div{
+  font-family: 'Poor Story', cursive;
+  /* font-family: 'Do Hyeon', sans-serif;
+  font-family: 'Gothic A1', sans-serif;
+  font-family: 'Roboto', sans-serif; */
+}

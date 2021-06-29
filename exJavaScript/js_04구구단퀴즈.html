@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <script type="text/javascript">
+
+    //1차시도
+    // for (i = 2; i < 10; i++) {
+    //   for (j = 1; j < 10; j++) {
+    //     if (j != 1) {
+    //     } else {
+    //       console.log(i + "X" + j + "=" + (i * j));
+    //     }
+    //     if (j != 9) {
+    //     } else {
+    //       console.log(i + "X" + j + "=" + (i * j));
+    //     }
+    //   }
+    // }
+
+    //2차시도
+    // var dan1 ="";
+    // for (i = 2; i < 10; i+=3) {
+    //   for (j = 1; j < 10; j++) {
+    //   console.log(i + "X" + j + "=" + (i * j));
+    //   }
+    //   console.log(dan1);
+    // }
+    //
+    // var dan2 ="";
+    // for (i = 3; i < 10; i+=3) {
+    //   for (j = 1; j < 10; j++) {
+    //   console.log(i + "X" + j + "=" + (i * j));
+    //   }
+    //   console.log(dan2);
+    // }
+    //
+    // var dan3 ="";
+    // for (i = 4; i < 10; i+=3) {
+    //   for (j = 1; j < 10; j++) {
+    //   console.log(i + "X" + j + "=" + (i * j));
+    //   }
+    //   console.log(dan3);
+    // }
+    // console.log(dan1 + dan2 + dan3);
+
+
+
+      //3차시도
+//     var gugu ="";
+//       for (i = 2; i < 10; i++) {
+//         for (j = 1; j < 10; j++) {
+//           console.log(i + "X" + j + "=" + (i * j));
+//         }
+//         for (i = 2; i < 10; i+=3) {
+//         console.log(gugu);
+//       }
+// }
+
+
+// console.log( 2 + "*" + 1 + "=" + 2 * 1 +"  "+ 3 + "*" + 1 + "=" + 3 * 1 + "  " + 4 + "*" + 1 + "=" + 4 * 1);
+// console.log( 2 + "*" + 2 + "=" + 2 * 1 +"  "+ 3 + "*" + 1 + "=" + 3 * 1 + "  " + 4 + "*" + 1 + "=" + 4 * 1);
+// console.log( 2 + "*" + 3 + "=" + 2 * 1 +"  "+ 3 + "*" + 1 + "=" + 3 * 1 + "  " + 4 + "*" + 1 + "=" + 4 * 1);
+//
+// console.log((i+k) + "*" + j + "=" + (i+k) * j +"  "+ (i+k) + "*" + j + "=" + (i+k) * j + "  " + (i+k) + "*" + j + "=" + (i+k) * j);
+// 이걸 이제 줄이는 거임
+//
+
+
+//
+// //3중 for문 풀이
+//  for(i=2;i<10;i+=3){
+//    for(j=1;j<10;j++){
+//      var str = "";
+//      for(k=0;k<3;k++){
+//        if((i+k)!=10) {str = str + ((i+k) + "*" + j + "=" + (i+k) * j + "\t");}
+//      }
+//      console.log(str);
+//    }
+//    console.log(""); //공백을 주는 거임.
+//  }
+//
+
+
+
+
+
+ for(i=2;i<10;i++){
+   for(j=1;j<10;j++){
+      var str = "";
+     for(k=0;k<3;k++){
+       str = str + ((i+k) + "*" + j + "=" + (i+k)*j + "\t");
+
+     }
+     console.log(str)
+   }
+   console.log("");
+ }
+
+
+
+
+
+
+
+  </script>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

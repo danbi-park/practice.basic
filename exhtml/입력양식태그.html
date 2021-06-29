@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style>
+
+    </style>
+
+    <script type="text/javascript">
+      function send() {
+        alert('hello');
+                      }
+    </script>
+  </head>
+
+
+  <body>
+
+    <a href="index.html?name=LGH&id=LGH&pass=1234">전송</a>
+
+    <form class="" action="index.html" method="get">
+      <input id="name" type="text" name="name" value="" placeholder="이름"><br>
+      <input id="id" type="text" name="id" value="" placeholder="ID"><br>
+      <input id="pw" type="password" name="pass" value="" placeholder="비밀번호"><br>
+
+      성별: <label for="female">여성</label>
+      <input type="radio" name="gender" id="female" value="female">
+      <label for="male">남성</label><input type="radio" name="gender" id="male" value="male"><br>
+
+      취미: <label for="movie">영화감상</label><input id="movie" type="checkbox" name="hobby" value="movie">
+      <label for="game">게임</label><input id="game" type="checkbox" name="hobby" value="game"><br>
+      <!-- hobby처럼 이름(name)이 같을 경우엔 자동으로 div가 되어 groupping이 됨 -->
+
+      지역: <select class="" name="local">
+        <option value="서울">서울</option>
+        <option value="부산" selected>부산</option>
+        <option value="광주">광주</option>
+        </select>
+
+      제품: <select class="" name="item">
+        <option value="1" selected>마스크</option>
+        <option value="2">손소독제</option>
+        <option value="3">공기청정기</option>
+        </select>
+
+      <p style="margin:10px"></p>
+      <button type="button" onclick="send()">전송</button>
+      <button type="reset">취소</button>
+    </form>
+
+
+
+
+
+  </body>
+</html>

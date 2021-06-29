@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+
+  </style>
+
+  <script type="text/javascript">
+    window.onload = function() {
+      document.getElementById('btnSend').onclick = function(event) {
+        event.preventDefault();
+        // input img src은 submit속성을 가지고 있기 때문에 이렇게 해줘서 event를 막아줌.(index.html로 가는 것을 멈춤 )
+        id = document.getElementById('id').value;
+        if (id == undefined || id == "") {
+          alert('아이디를 확인해주세요.');
+          document.getElementById('id').focus();
+          return;
+        }
+
+        duplicate = document.getElementById('duplicate').value;
+        if (duplicate == undefined || duplicate == "") {
+          alert('중복확인을 해주세요.');
+          document.getElementById('duplicate').focus();
+          return;
+        }
+        var sel = document.getElementById('sel');
+        alert(sel.options[sel.selectedIndex].value);
+        alert(sel.options[sel.selectedIndex].text);
+        //document.getElementById('frm').submit();  id로 지정햇을 경우
+        // document.frm.submit() name으로 지정했을 경우
+      }
+
+      // id체크하는 것과 중복확인 하는 이벤트는 서로 다름 그래서 위아래 따로 코딩하는 것
+
+      document.getElementById('btnDuplicate').onclick = function() {
+        document.getElementById('duplicate').value = "";
+        id = document.getElementById('id').value;
+        if (id == undefined || id == "") {
+          alert('아이디를 확인해주세요.');
+          document.getElementById('id').focus();
+          return;
+        }
+        document.getElementById('duplicate').value = "ok";
+      }
+
+    }
+
+  </script>
+</head>
+
+<body>
+
+  <form class="" id="frm" action="index.html" method="post" enctype="multipart/form-data">
+    <!-- 이게 없으면 파일이 전송이 안됨 -->
+    ID: <input type="text" id="id" name="id" value="">
+    <input type="hidden" name="duplicate" id="duplicate" value="">
+    <button type="button" name="button" id="btnDuplicate">중복확인</button><br>
+
+    File: <input type="file" name="file" id="file" value=""><br>
+    <!-- <button type="button" name="button" id="btnSend">전송</button> -->
+
+    <select class="" name="sel" id="sel">
+      <option value="001">총무</option>
+      <option value="002">인사</option>
+      <option value="003">자재</option>
+      <option value="004">생산</option>
+    </select><br>
+
+
+    <input type="button" src="./images/Penguins.jpg" name="buttom" id="btnSend" width="150" value="전송">
+  </form>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+    <style></style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function(){
+      //slider의 넓이, 높이 구함.
+      width =$('[data-role="slider"]').attr('data-width');
+      height=$('[data-role="slider"]').attr('data-height');
+
+      //이미지 매칭
+			$('.item').each(function(i){
+				$(this).css('background-image', 'url(../images/'+i+'.jpg)');
+			});
+
+      // 첫번째 div를 끝에 추가
+			$('[data-role="slider"]').append($('.item:first-child').clone());
+
+      //div의 갯수를 구함
+			count=$('[data-role="slider"] .item').length;
+
+      //div에 z-index를 각각 준다.
+      $('.item').each(function(i){
+				$(this).css('z-index', count-1-i);
+			});
+
+      //slider와 item의 넓이, 크기, position 지정
+      $('[data-role="slider"]').css({
+				position:'relative',
+				width: width, height: height
+			}).find('.item').css({
+				position:'absolute',width:width,height:height
+			});
+		});
+		$(document).ready(function(){
+			var i=0;
+			setInterval(function(){
+				//console.log("i:"+i);
+				if(i>3){
+					i=0;
+					$('.item').css('opacity',1);
+				}
+				$('.item:nth-child('+ i++ +')').animate({opacity:0},2000);
+			}, 4000);
+		});
+	</script>
+</head>
+<body>
+    <div data-role="slider" data-width="500" data-height="300">
+  		<div class="item">
+  			<h1>1 Lorem ipsum dolor sit amet</h1>
+  			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere odio quis lectus congue ullamcorper blandit leo feugiat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed magna sed turpis egestas ultrices ac ut enim. Curabitur at est ac nisi tincidunt accumsan in nec turpis. Maecenas lobortis felis dictum magna aliquet sagittis. Integer metus ipsum, vehicula at ultrices a, dictum eu metus.</p>
+  		</div>
+  		<div class="item">
+  			<h1>2 Proin in urna turpis.</h1>
+  			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere odio quis lectus congue ullamcorper blandit leo feugiat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed magna sed turpis egestas ultrices ac ut enim. Curabitur at est ac nisi tincidunt accumsan in nec turpis. Maecenas lobortis felis dictum magna aliquet sagittis. Integer metus ipsum, vehicula at ultrices a, dictum eu metus.</p>
+  		</div>
+  		<div class="item">
+  			<h1>3 Duis malesuada lorem neque.</h1>
+  			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere odio quis lectus congue ullamcorper blandit leo feugiat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed magna sed turpis egestas ultrices ac ut enim. Curabitur at est ac nisi tincidunt accumsan in nec turpis. Maecenas lobortis felis dictum magna aliquet sagittis. Integer metus ipsum, vehicula at ultrices a, dictum eu metus.</p>
+  		</div>
+    </div>
+</body>
+</html>

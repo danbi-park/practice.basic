@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>반응 선택 링크 선택자</title>
+
+  <style>
+  /* 반응선택자 */
+    a{
+    text-decoration: none;
+    color:black;
+    }
+    a:link {
+      color:orange;
+    }
+    a:visited{
+      color:green;
+    }
+    div:hover{
+      color:lightblue;
+    }
+    div:active{
+      color:rgb(33, 149, 255);
+    }
+    /* hover먼저 온 후 active를 적어줘야 함. */
+    a:hover{
+      color:red;
+    }
+
+/* 상태선택자 */
+    input[type="text"]:focus{
+      background:yellow;
+    }
+    input[type="text"]:disabled{
+      background:red;
+    }
+    input[type="checkbox"]:checked{
+      color:red;
+    }
+
+
+
+  </style>
+</head>
+
+<body>
+  <!-- 반응선택자 -->
+  <a href="../index.html">링크1</a>
+  <a href="../미디어태그.html">링크2</a>
+  <a href="../입력양식태그.html">링크3</a>
+  <div class="">div</div>
+
+  <!-- 상태선택자 -->
+  <input type="text" name="" value="" disabled>
+                    <!--기본적으로 enabled 커서도 안나타나고 아무것도 안됨 -->
+  <input type="text" name="" value="" readonly>
+                                  <!-- 읽기만 가능 편집 못함 -->
+  <input type="checkbox" name="" value="">
+
+
+
+</body>
+
+</html>

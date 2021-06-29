@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>while문_01</title>
+  <script type="text/javascript">
+    for (var i = 10, j = 0; i > 0, j < 10; i--, j++) {
+      console.log(i + "," + j);
+    }
+
+    var i = 0 ;
+    while(i<10){
+      console.log(i++);
+    }
+
+    var i =2;
+    while(i<10){
+      var j = 1;
+      while(j<10){
+      console.log(i + "*" + j + "=" + i*j++); //여기에 i++을 넣으면 값이 제대로 안나옴
+    }
+    i++ //여기에 넣어줘야지 i가 증가될 수 있음
+  }
+
+  var arr = ['h', 'e','l', 'l', 'o'];
+  var i = 0;
+  var texth = "";
+  while(i<arr.length){
+    texth = texth + arr[i++]
+  }
+  console.log(texth);
+
+
+
+
+
+  </script>
+
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

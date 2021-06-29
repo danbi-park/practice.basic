@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>속성선택자</title>
+  <style media="screen">
+
+    input[data-role$="an"]{
+      background: yellow;
+    }
+    input[data-role*="o"]{
+      background: yellow;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>속성 선택자</h1>
+  <hr>
+  <input type="text" data-role="ko" value="ko">
+  <input type="text" data-role="ko-rean" value="ko-rean">
+  <input type="text" data-role="ko rean" value="ko rean">
+  <input type="text" data-role="korean" value="korean">
+
+
+</body>
+
+</html>

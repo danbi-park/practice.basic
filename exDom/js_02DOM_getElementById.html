@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+
+  //getElementById() 메서드를 사용해 문서 객체 1개 선택하기
+    window.onload = function(){
+      var header = document.getElementById('header');
+      console.log(header.textContent); //h1의 내용을 들고온다.
+      console.log(header.innerHTML); //각 태그의 속성을 이용해 들고옴
+      header.style.color = 'orange';
+      header.style.backgroundColor = 'red';
+    }
+
+    </script>
+
+  </head>
+  <body>
+    <h1 id="header">Header</h1>
+
+  </body>
+</html>

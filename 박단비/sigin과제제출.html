@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>회원가입페이지</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+   window.onload = function() {
+      document.getElementById('btnSignin').onclick = function(event) {
+
+        var id = document.getElementById('id');
+        if (id.value == undefined || id.value == '') {
+          alert('아이디를 확인해주세요');
+          id.focus();
+          return;
+        }
+
+        var pw = document.getElementById('pw');
+        if (pw.value == undefined || pw.value == '') {
+          alert('비밀번호를 확인해주세요');
+          pw.focus();
+          return;
+        }
+
+        var repw = document.getElementById('repw');
+        if (repw.value == undefined || repw.value == '') {
+          alert('비밀번호를 재확인을 해주세요');
+          repw.focus();
+          return;
+        }
+
+        if (repw.value != pw.value) {
+          alert('비밀번호가 맞지 않습니다.');
+          repw.value = "";
+          pw.value = "";
+          pw.focus();
+          return;
+        }
+
+        var name = document.getElementById('name');
+        if (name.value == undefined || name.value == '') {
+          alert('이름을 확인해주세요');
+          name.focus();
+          return;
+        }
+
+        var name = document.getElementById('name').value;
+        if (name.replace(/[가-힣]/g, '').length == 0) {
+        }else{
+          alert('한글이름을 입력해주세요');
+          event.preventDefault();
+          name = '';
+          document.getElementById('name').focus();
+          return;
+        }
+
+        var mobile1 = document.getElementById('mobile1');
+        if (mobile1.value == undefined || mobile1.value == ''|| mobile1.value.length < 4) {
+          alert('휴대폰 번호를 앞자리를 확인해주세요');
+          mobile1.focus();
+          return;
+        }
+
+        var mobile2 = document.getElementById('mobile2');
+        if (mobile2.value == undefined || mobile2.value == '' || mobile2.value.length < 4) {
+          alert('휴대폰 번호를 뒷자리를 확인해주세요');
+          mobile2.focus();
+          return;
+        }
+
+        var email = document.getElementById('email');
+        if (email.value == undefined || email.value == '') {
+          alert('이메일을 확인해주세요');
+          email.focus();
+          return;
+        }
+
+        if (email.value.replace(/[가-힣]/g, '').length == 0) {
+          document.frm.submit();
+        }else{
+          alert('이메일은 영어로 입력해주세요');
+          event.preventDefault();
+          email.value = '';
+          email.focus();
+          return;
+        }
+
+        document.frm.submit();
+      }
+
+
+      document.getElementById('btnBefore').onclick = function() {
+        location.href = "login.html";
+      }
+
+
+  }
+    </script>
+    <script>
+      $(function() {
+        var numRegExp = RegExp(/[0-9]$/g);
+
+        $('#mobile1, #mobile2').on({
+          'keyup': function(e){numCheck(e,numRegExp,this);},
+          'keypress': function(e){numCheck(e,numRegExp,this);}
+        });
+      });
+
+      function numCheck(e,numRegExp,item){
+          if($(item).attr('id') == $('#mobile2').attr('id')
+            && $(item).val().length == 0){
+              $('#mobile1').focus();
+          }
+          if(numRegExp.test($(item).val())) {
+
+            if($(item).attr('id') == $('#mobile1').attr('id')
+              && $(item).val().length >3){
+                $('#mobile2').focus();
+            }
+          } else {
+            $(item).val($(item).val().replace(/[^0-9]/g,''));
+          }
+      }
+    </script>
+  </head>
+
+
+
+<body>
+<div class="loginBox">
+<h1>회원가입</h1>
+<form name="frm" class="" action="welcomepage.html" method="post">
+
+  <div class="inside">
+    <label for="id">회원 id</label><br>
+    <input id="id" type="text" name="" value=""><br>
+  </div>
+
+  <div class="inside">
+  <label for="pw">비밀번호</label><br>
+  <input id="pw" type="text" name="" value=""><br>
+  </div>
+
+  <div class="inside">
+  <label for="repw">비밀번호 재확인</label><br>
+  <input id="repw" type="text" name="" value=""><br>
+  </div>
+
+  <div class="inside">
+  <label for="name">회원명</label><br>
+  <input id="name" type="text" name="" value=""><br>
+  </div>
+
+  <div class="inside">
+  <label for="mobile">전화번호</label><br>
+  <select class="" name="">
+    <option value="" selected >010</option>
+    <option value="">016</option>
+    <option value="">018</option>
+  </select>
+  <input maxlength="4" id="mobile1" type="text" name="" value=""> -
+  <input maxlength="4" id="mobile2" type="text" name="" value=""><br>
+  </div>
+
+  <div class="inside">
+  <label for="email">이메일</label><br>
+  <input id="email" type="text" name="" value=""> @
+  <select class="" name="">
+    <option value="" selected >gmail.com</option>
+    <option value="">naver.com</option>
+    <option value="">daum.co.kr</option>
+  </select>
+  </div>
+
+  <div class="btn_confirm">
+    <button id="btnBefore" type="button" name="before">이전으로</button>
+    <button id="btnSignin" type="button" name="signin">회원가입</button>
+  </div>
+</form>
+
+</div>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <style>
+    *{
+      padding:0;
+      margin:0;
+    }
+
+    html, body{
+      margin:0 auto;
+      width:600px;
+      height:100%;
+    }
+
+    body{
+    background: white;
+    width:550px;
+    }
+
+    table{
+      width:500px;
+      padding: 20px;
+    }
+
+    form legend{
+      text-align:center;
+      font-size:24px;
+      font-weight:600;
+    }
+
+    fieldset {
+      padding: 20px;
+      width:500px;
+      border:2px dashed rgb(145, 179, 219);
+      border-radius: 20px;
+      background: rgba(237, 244, 251, 0.77);
+    }
+
+    input{
+      width:100px;
+      border: 0;
+    }
+
+    select{
+      border:0;
+    }
+
+    .buttons{
+      display:block;
+      text-align: center;
+    }
+
+    #btnSubmit,#btnReset{
+      padding:5px;
+      background: rgb(219, 224, 241);
+      border-radius:10px;
+      cursor:pointer;
+      color:rgb(17, 0, 122);
+    }
+
+    #btnSubmit:hover, #btnReset:hover{
+      background: rgb(181, 198, 255);
+      font-weight:600;
+    }
+
+
+  </style>
+
+  <script type="text/javascript">
+  var numRegExp = RegExp(/[0-9]$/g);
+
+    window.onload = function() {
+      document.getElementById('btnSubmit').onclick = function() {
+        var name = document.getElementById('name').value;
+
+        if (name == undefined || name == '') {
+          alert('이름을 확인해주세요');
+          document.getElementById('name').focus();
+          return;
+        }
+
+        var id = document.getElementById('id').value;
+        if (id == undefined || id == '') {
+          alert('아이디를 확인해주세요');
+          document.getElementById('id').focus();
+          return;
+        }
+
+        var pw = document.getElementById('pw').value;
+        if (pw == undefined || pw == '') {
+          alert('비밀번호를 확인해주세요');
+          document.getElementById('pw').focus();
+          return;
+        }
+
+        var repw = document.getElementById('repw').value;
+        if (repw == undefined || repw == '') {
+          alert('비밀번호를 재확인을 해주세요');
+          document.getElementById('repw').focus();
+          return;
+        }
+
+        if (repw != pw) {
+          alert('비밀번호가 맞지 않습니다.');
+          repw = "";
+          pw = "";
+          document.getElementById('repw').focus();
+          return;
+        }
+
+        var email = document.getElementById('email').value;
+        if (email == undefined || email == '') {
+          alert('이메일을 확인해주세요');
+          document.getElementById('email').focus();
+          return;
+        }
+
+        var mobile1 = document.getElementById('mobile1').value;
+        if (mobile1 == undefined || mobile1 == '') {
+          alert('휴대폰 번호를 앞자리를 확인해주세요');
+          document.getElementById('mobile1').focus();
+          return;
+        }
+        var mobile2 = document.getElementById('mobile2').value;
+        if (mobile2 == undefined || mobile2 == '') {
+          alert('휴대폰 번호를 뒷자리를 확인해주세요');
+          document.getElementById('mobile2').focus();
+          return;
+        }
+
+        document.frm.submit();
+      }
+    }
+
+  </script>
+
+  <script>
+    $(function() {
+      var numRegExp = RegExp(/[0-9]$/g);
+
+      $('form').submit(function(event) {
+        var name = $('#name').val();
+        if ($('#name').val() == '') {
+          alert('이름을 입력해주세요');
+          $('#name').focus();
+          return false;
+        }
+        if (name.replace(/[가-힣]/g, '').length == 0) {
+          alert('과정을 진행합니다.');
+        } else {
+          alert('한글이름을 입력해주세요');
+          event.preventDefault();
+          $('#name').val(''); //안에 내용을 비워버릴수도 있음
+          $('#name').focus();
+        }
+      });
+
+      $('#mobile1, #mobile2').on({
+        'keyup': function(e){numCheck(e,numRegExp,this);},
+        'keypress': function(e){numCheck(e,numRegExp,this);}
+      });
+    });
+
+    function numCheck(e,numRegExp,item){
+        if($(item).attr('id') == $('#mobile2').attr('id')
+          && $(item).val().length == 0){
+            $('#mobile1').focus();
+        }
+        if(numRegExp.test($(item).val())) {
+
+          if($(item).attr('id') == $('#mobile1').attr('id')
+            && $(item).val().length >3){
+              $('#mobile2').focus();
+          }
+        } else {
+          $(item).val($(item).val().replace(/[^0-9]/g,''));
+        }
+    }
+  </script>
+
+</head>
+
+
+<body>
+
+<div class="table">
+  <form name="frm" action="welcomeNew.html" method="post">
+    <fieldset>
+      <legend>Sign-in</legend>
+      <table>
+        <tbody>
+          <tr>
+            <th><label for="name">이름 </label></th>
+            <td></td>
+            <td><input type="text" name="이름" id="name" value=""></td>
+          </tr>
+
+          <tr>
+            <th><label for="id">아이디 </label></th>
+            <td></td>
+            <td><input type="text" name="아이디" id="id" value=""></td>
+          </tr>
+
+          <tr>
+            <th><label for="pw">비밀번호  </label></th>
+            <td></td>
+            <td><input type="text" name="비밀번호" id="pw" value=""></td>
+          </tr>
+
+          <tr>
+            <th><label for="repw">비밀번호 확인 </label></th>
+            <td></td>
+            <td><input type="text" name="비밀번호" id="repw" value=""></td>
+          </tr>
+
+          <tr>
+            <th><label for="email">이메일 </label></th>
+            <td></td>
+            <td><input type="text" name="이메일" id="email" value="">@<select value=""><option>naver.com</option>
+              <option>gmail.com</option>
+              <option>daum.co.kr</option>
+            </select></td>
+          </tr>
+
+          <tr>
+            <th>휴대폰</th>
+            <td></td>
+            <td><select class="" name="mobile">
+              <option value="010" selected>010</option>
+              <option value="011">011</option>
+              <option value="012">012</option>
+              <input maxlength="4" id="mobile1" type="text" name="" value=""> - <input type="text" maxlength="4" id="mobile2" name="" value=""></td>
+            </tr>
+
+          </tbody>
+        </table>
+      <div class="buttons">
+        <button type="button" id="btnSubmit">가입하기</button>
+        <button type="reset" id="btnReset">취소</button>
+      </div>
+
+    </fieldset>
+  </form>
+</div>
+
+
+</body>
+</html>

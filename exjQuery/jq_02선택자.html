@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery 선택자</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"></script>
+    <script>
+      $(function(){
+        //선택하면 전체가 다 선택됨.
+        $('h1').css('color','red');
+        $('h1').css('backgroundColor','orange');
+      });
+      //id면 # class면 . 등 style에서 썼던 선택자를 홑따옴표안에만
+      // 잘쓰면 된다.
+    </script>
+
+
+
+  </head>
+  <body>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h1>Header</h1>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Log-in</title>
+
+  <style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .loginBox {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -150px;
+      margin-top: -75px;
+    }
+
+    fieldset {
+      background: #fbf3c5;
+      width: 300px;
+      height: 150px;
+      border-radius: 20px;
+      border: #e8db90 solid 2px;
+    }
+
+    legend {
+      text-align: center;
+      font-weight: bold;
+      font-size: 15pt;
+      color: #555555;
+    }
+
+
+    td {
+      width: 80px;
+      text-align: center;
+      font-weight: 550;
+      margin-bottom: 5px;
+      display: inline-block;
+      color: #555555;
+    }
+
+    table {
+      margin: 15px 5px;
+    }
+
+    input {
+      border-radius: 30px;
+      border: dashed #ffc9c9 2px;
+    }
+
+    button {
+      width: 70px;
+      padding: 4px;
+      background: #ffc9c9;
+      box-shadow: 1px 2px 3px rgb(147, 147, 147);
+      border-radius: 20px;
+      border: solid 2px rgba(245, 153, 153, 0.86);
+      cursor: pointer;
+      font-size: 10px;
+      font-weight: 600;
+      color: rgb(75, 73, 73);
+    }
+
+    button:hover {
+      background: rgba(245, 153, 153, 0.86);
+      border-radius: 20px;
+      border: solid 2px #ffc9c9;
+      color: black;
+    }
+
+    a{
+      font-size:10px;
+      display:block;
+      text-align:right;
+      color:rgb(173, 134, 255);
+      margin:10px;
+      text-decoration:none;
+    }
+
+  </style>
+  <script>
+    window.onload = function() {
+      document.getElementById('btnSubmit').onclick = function() {
+        id = document.getElementById('id').value;
+        pw = document.getElementById('pw').value;
+
+        if (id == undefined || id == '') {
+          alert('아이디를 확인해주세요');
+          document.getElementById('id').focus();
+          return;
+        }
+        if (pw == undefined || pw == '') {
+          alert('비밀번호를 확인해주세요');
+          document.getElementById('pw').focus();
+          return;
+        }
+
+        alert('로그인 되었습니다.');
+        document.frm.submit();
+      }
+    }
+
+  </script>
+</head>
+
+<body>
+
+
+    <form name="frm" style="position:absolute" class="loginBox" action="index.html" method="post">
+
+      <fieldset>
+        <legend>Log-in</legend>
+        <table>
+
+          <tr>
+            <td><label for="id">ID: </label></td>
+            <td><input id="id" type="text" name="" value=""></td>
+          </tr>
+
+          <tr>
+            <td><label for="pw">Pw: </label></td>
+            <td><input id="pw" type="text" name="" value=""></td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <td><button id="btnSubmit" class="btn" type="button" name="button">LOGIN</button></td>
+            <td><button class="btn" type="reset" name="button">RESET</button></td>
+          </tr>
+
+        </table>
+      </fieldset>
+      <a href="signin.html">회원가입 하러가기🏃‍♂️</a>
+    </form>
+
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>고정위치와 글자생략</title>
+  <style media="screen">
+    html, body{
+      /* height:100%; */
+      min-height:900px;
+      background:rgba(255, 177, 177, 0.21);
+    }
+    body{
+      width:500px;
+      margin:0 auto;
+      background:white;
+    }
+    #top{
+      position:fixed;
+      background:rgba(193, 254, 246, 0.6);
+      top:0; left:0; right:0;
+      height:50px;
+    }
+    #bottom{
+      position:fixed;
+      background:rgba(97, 134, 129, 0.65);
+      bottom:0; left:0; right:0;
+      /* bottom을 주면 됨! top이아니라 */
+      height:50px;
+    }
+    #side{
+      position: fixed;
+      height:400px;
+      width:50px;
+      top:100px; right:50px;
+      background:rgba(248, 255, 191, 0.32);
+    }
+    #menu{
+      text-align:center; font-size:15pt;
+      position: fixed;
+      height:500px;
+      width:100px;
+      top:100px; left:0px;
+      background:rgba(255, 177, 224, 0.32);
+    }
+    ul{
+      list-style:none;
+      padding:10px;
+    }
+    li{
+      font-size:10pt;
+      text-align:center;
+      height:50px; line-height:50px;
+      background:white;
+      padding:0px;
+      margin:0 0 20px 0;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      /* 반드시 그 태그가 block속성이어야한다.width가 있어야하기 때문  */
+      white-space:nowrap;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="top">상단바</div>
+  <div id="side">사이드바</div>
+  <div id="menu">menu
+  <ul>
+    <li>home</li>
+    <li>sale</li>
+    <li>buy</li>
+    <li>item</li>
+    <li>item is very important</li>
+  </ul>
+  </div>
+  <div id="bottom">하단바</div>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>문자 부정 선택자</title>
+
+    <style media="screen">
+      p::second-letter{
+        color: #24d0ff;
+        font-size:30pt;
+      }
+
+      p::first-line{
+        color: #24d0ff;
+        font-size:20pt;
+      }
+
+      p::after{
+        content:"<-- Republic of Korea";
+        color:red;
+      }
+    /* 뒤에 content를 붙여줌 */
+      p::before{
+        content:"♥";
+        color:pink;
+      }
+
+      p::selection{
+        background: orange;
+        color:pink;
+      }
+    /* 블록을 하면 오렌지색으로 변함 */
+
+      .bright{
+        font-weight:bold;
+        color:rgb(196, 0, 255);
+      }
+      p:not(.bright){
+        color:blue;
+      }
+
+    </style>
+  </head>
+
+  <body>
+
+    <p class="bright">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="bright">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+    <p>class가 bright가 아닌 p태그는 first letter, first line, after가 적용되지 않은 나머지 내용은 다 p:not(.bright){color:blue;}로 인해 파란색으로 됨</p>
+  </body>
+</html>

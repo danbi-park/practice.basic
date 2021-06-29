@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>NAVER</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        body {background-color: #f0f0f0;}
+        @font-face {
+            font-family: 'TTTogether';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/TTTogetherA.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'GongGothicMedium';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'MaplestoryOTFBold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Katuri';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/Katuri.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'KBIZHanmaumMyungjo';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KBIZHanmaumMyungjo.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+        font-family: 'SEBANG_Gothic_Bold';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        }
+
+        a {text-decoration: none;}
+
+        .container {
+            width: 1130px;
+            margin: 0 auto 8px auto;
+        }
+        .left { background-color: white;
+            float: left;
+            width: 750px; height: 428px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 2px #c0c0c0;
+        }
+        .right { background-color: white;
+            float: right;
+            width: 350px; height: 428px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 2px #c0c0c0;
+        }
+        .gnb {
+            float: left;
+            padding: 8px 0;
+            height: 40px;
+            line-height: 40px;
+        }
+        .gnb li {
+            list-style-type: none;
+            float: left;
+            /* padding-left: 16px; */
+            cursor: pointer;
+            margin-left: 12px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .gnb li:first-child {padding-left: 0;}
+
+        .gnb.main-menu>li{
+            font-family: KBIZHanmaumMyungjo;
+            color: #13cc50;
+            font-size: 19px;
+        }
+
+        .plus {font-size: 13px; color: gray;}
+
+        .plus sub {color: #6e6e6e;
+        text-shadow: 0 0 1px #6e6e6e, 0 1px 0 #6e6e6e, 0 -1px 0 #6e6e6e;}
+
+        .rank {
+            float: right;
+            padding: 8px 0;
+            height: 40px;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        .rank li {list-style-type: none;}
+
+        #rankwin {
+            display: inline-block;
+            width: 180px;
+            vertical-align: middle;
+        }
+
+        #rankname {margin-left: 5px;}
+
+        #rankname:hover {text-decoration: underline;}
+
+        #rankwin:first-letter {
+            color:#05991e; font-weight: bold;
+        }
+
+        .footerbox { background-color: white;
+            clear: both;
+            height: 240px; width: 100%;
+            border-top: 1px solid #cccccc;;
+            box-shadow: 0 -2px 1px #e4e4e4;
+            margin-bottom: 0;
+        }
+
+        .menunav {
+            border-top: 1px solid #cccccc;
+            border-bottom: 1px solid #cccccc;
+            height: 55px;
+            width: 100%;
+            box-shadow: 0 2px 1px #e4e4e4;
+        }
+
+        .top-service {
+            float: right;
+            height: 30px;
+            line-height: 30px;
+            vertical-align: middle;
+        }
+        .top-service a {
+            float: left;
+            font-size: 11px;
+            color: #bbbbbb;
+            margin: 5px;
+            vertical-align: middle;
+        }
+
+        .top-service a:first-of-type {color: #383838;}
+
+        .top-service a:last-of-type {margin-right: 0;}
+
+        #start-nv:hover {text-decoration: underline;}
+
+        #junior {font-family: MaplestoryOTFBold; font-size: 12px;}
+
+        #junior:hover {
+            background: #2575ff;
+            background: -webkit-linear-gradient(left, #2575ff 16%,#f73b2a 16%,#f73b2a 16%,#f73b2a 32%,#ef8a2b 32%,#ef8a2b 48%,#ef8a2b 48%,#40dd27 48%);
+            background:    -moz-linear-gradient(right, #2575ff 16%, #f73b2a 16%, #f73b2a 16%, #f73b2a 32%, #ef8a2b 32%, #ef8a2b 48%, #ef8a2b 48%, #40dd27 48%);
+            background:      -o-linear-gradient(to right, #2575ff 16%,#f73b2a 16%,#f73b2a 16%,#f73b2a 32%,#ef8a2b 32%,#ef8a2b 48%,#ef8a2b 48%,#40dd27 48%);
+            background:         linear-gradient(to right, #2575ff 16%,#f73b2a 16%,#f73b2a 16%,#f73b2a 32%,#ef8a2b 32%,#ef8a2b 48%,#ef8a2b 48%,#40dd27 48%);
+            -webkit-background-clip: text;
+                    background-clip: text;
+            color: transparent;
+        }
+
+        #happybean {font-family: Katuri; font-size: 13px;}
+
+        #happybean:hover {
+            background: #40dd27;
+            background: -webkit-linear-gradient(left, #31c21a, #047e06);
+            background:    -moz-linear-gradient(right,  #31c21a, #047e06);
+            background:      -o-linear-gradient(to right, #31c21a, #047e06);
+            background:         linear-gradient(to right, #31c21a, #047e06);
+            -webkit-background-clip: text;
+                    background-clip: text;
+            color: transparent;
+        }
+
+
+        #nv-btn {
+            width: 20px; height: 20px;
+            border-radius: 50%; border: none;
+            background-color: white;
+            box-shadow: 0 2px 4px #cccccc;
+            margin: 5px 10px;
+        }
+
+        #nv-btn:hover {background-color: #f8f8f8;}
+
+        #logo {height: 150px; line-height: 150px;}
+
+        #logo img {vertical-align: middle; padding-bottom: 10px;}
+
+        #logo-nv {font-family: TTTogether; color: #13cc50;
+            font-size: 40px; font-weight: bold;
+            display: inline-block;
+            vertical-align: middle;
+            width: 250px; text-align: center;
+            cursor: pointer;
+        }
+        #search {
+            height: 50px; border: 2px solid #13cc50;
+            border-right: 11px solid #13cc50;
+            width: 450px; padding: 0 20px;
+            font-size: 16px;
+            font-family: GongGothicMedium;
+        }
+
+        input:focus {outline:none;}
+
+        #search-btn {
+            height: 54px; width: 50px; padding-right: 10px;
+            background-color: #13cc50; color: white;
+            border: none; vertical-align: middle;
+            font-size: 18px; font-family: GongGothicMedium;
+            cursor: pointer;
+        }
+
+        #header {
+            margin-bottom: 20px;
+            width: 100%;
+            background-color: white;
+        }
+
+        .banner {
+            height: 135px;
+            background-image: url('https://i.pinimg.com/originals/fe/bf/76/febf761ed1d0aff3afd19a1e062ceb3d.png');
+            background-size: cover; background-position: center;
+            cursor: pointer;
+        }
+
+        .profile {
+            height: 132px; background-color: white;
+        }
+
+        .my-profile {padding: 17px; }
+
+        #userbox {
+            height: 55px;
+            margin-top: 5px;
+        }
+
+        .my-profile img {
+            float: left;
+            border-radius: 50%;
+            border: 1px solid #e2e2e2;
+            margin-right: 10px;
+        }
+
+        #userbox a:first-of-type {
+            color: #2c2c2c; font-size: 16px;
+            font-weight: bold; color: #3f3f3f;
+        }
+        #userbox a {
+            color: #2c2c2c; font-weight: bold;
+            font-size: 13px; display: inline-block; margin-top: 5px;
+        }
+
+        #userbox a span {color: #00c01a; margin-left: 5px;}
+        #userbox a span:hover {text-decoration: underline;}
+
+        #userbox a:nth-of-type(2) {
+            color: gray; font-weight: normal;
+            font-size: 12px;
+        }
+
+        #userbox a:nth-of-type(2) span {
+            text-decoration: underline;
+            color: gray;
+        }
+
+
+        #profile-btn {
+            float: right;
+            font-weight: bold;
+            background-color: white;
+            color: #3f3f3f;
+            border: 1px solid #dadada;
+            border-radius: 3px;
+            padding: 2px 10px;
+            position: relative; top: 10px; left: 3px;
+            cursor: pointer;
+        }
+
+        .my-category {
+            clear: both;
+            height: 38px; line-height: 38px;
+            text-align: center;
+
+        }
+
+        .my-category a {
+            display: inline-block; border-left: 1px solid #dadada;
+            border-top: 1px solid #dadada;
+            margin: -3px;
+            width: 54px;
+            font-weight: bold; color: #3f3f3f;
+            font-size: 13px;
+
+        }
+
+        .my-category a:first-of-type {border-left: none;
+            border-top: 1px solid #dadada;}
+
+        #my-category {
+            width: 22px; font-family: TTTogether;
+            font-size: 14px;
+            padding-left: 1px;
+            position: relative; bottom: 1px;
+        }
+
+        #my-category:hover {
+            background-color: #e4e4e4;
+        }
+
+        .newsbar {
+            height: 49px; background-color: white;
+            line-height: 49px;
+
+        }
+
+        #news-in:hover {text-decoration: underline;}
+
+        .news-category {
+            float: right;
+            height: 49px;
+            line-height: 49px;
+        }
+
+        .news-category li {
+            list-style-type: none;
+            float: left;
+            padding: 0 15px;
+            cursor: pointer;
+            font-family: MaplestoryOTFBold;
+            font-size: 15px;
+        }
+
+        .news-category li:first-of-type {
+            font-size: 16px;
+            color: #13cc50;
+            padding: 0 5px;
+        }
+
+        .news-category li:hover {
+            background-color: #e9e9e9;
+        }
+
+        .main-company {
+            margin: 0 15px;
+            font-family: SEBANG_Gothic_Bold;
+            color: black;
+        }
+
+        .main-company:last-of-type {
+            font-family: TTTogether;
+        }
+
+        .newsbar span {
+            font-size: 14px;
+        }
+
+        .weather {
+            height: 153px;
+            font-family: SEBANG_Gothic_Bold;
+        }
+
+        #real-time:hover {text-decoration: underline;}
+
+        #day-box {border-bottom: 1px solid #e7e7e7;
+            height: 35px; line-height: 35px;
+            padding-left:10px;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        #day-left {float: left;}
+
+        #day-left span:last-of-type {
+            font-family: none; font-weight: bold;
+            margin-left: 10px;
+            font-size: 12px; color: #5e5e5e
+        }
+        #day-left span:last-of-type:hover {text-decoration: underline;}
+
+        #day-right{float: right;}
+
+        #day-page{
+            font-size: 13px; color: #5e5e5e;
+            display: inline-block;
+        }
+
+        #day-page:first-letter {
+            font-size: 15px;
+            color: black;
+        }
+
+        .day-btn {
+            font-family: MaplestoryOTFBold;
+            height: 35px; width: 33px;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+            border-left: 1px solid #e7e7e7;
+        }
+
+        .day-btn:first-of-type {
+            position: relative; left: 4px;
+        }
+
+        .day-btn:hover {background-color: #e9e9e9;}
+
+        #today-weather {
+            height: 83px;
+        }
+
+        .weather-img {
+            float: left;
+            margin-left: 15px; margin-top: 5px;
+        }
+
+        .weather-box {
+            float: left;
+            margin: 10px 0 0 10px;
+            height: 83px;;
+        }
+
+        #today-weather .main-C {
+            font-size: 35px;
+        }
+
+        .apC {font-size: 14px;}
+
+        #today-weather h1 sup {font-size: 20px;}
+
+        #next-weather {float: left;}
+
+        .weather2 {float: left;
+            margin-top: 8px; text-align: center;
+            width: 95px;
+        }
+
+
+        .weather2 .weather-img {
+            float: left;
+            margin-left: 15px; margin-top: 5px;
+        }
+
+        .mini-C {
+            font-size: 18px; margin-top: 13px; float: left;
+        }
+
+        .am-pm {
+            clear: both;
+            width: 100px;
+            font-size: 15px;
+        }
+
+        #weather-footer {
+            clear: both;
+            position: relative; bottom: 15px;
+            font-family: none;
+            font-weight: bold;
+            padding-left: 10px;
+            padding: 5px 8px 12px 18px;
+            font-size: 12px;
+            border-top: 1px solid #e7e7e7;
+            vertical-align: middle;
+        }
+
+        #weather-footer span {cursor: pointer;}
+
+        #weather-footer span:first-of-type {
+            font-family: SEBANG_Gothic_Bold;
+            color:#003cff;
+            position: relative; bottom: 1px;
+            margin-right: 7px;
+        }
+
+        #weather-footer span:last-of-type {
+            font-family: KBIZHanmaumMyungjo;
+            margin-left: 10px;
+            color: #e7e7e7;
+        }
+
+        #weather-footer a {color: #5e5e5e}
+
+        #cool {color: #1b52e7;}
+        #hot {color: #ec2e14;}
+
+        .news-banner {
+            height: 260px; font-weight: bold;
+            color: #e7e7e7;
+        }
+
+        #news-banner-nav {
+            border: 1px solid #e7e7e7;
+            height: 49px; line-height: 49px;
+        }
+        .news-banner a {
+            display: inline-block;
+            color: black; vertical-align: middle;}
+
+        .news-banner a:last-of-type {color: gray; font-size: 15px;}
+
+        #main-company-right {float: right;}
+
+        .company-btn {
+            position: relative; bottom: 2px; left: 1px;
+            vertical-align: middle;
+            font-family: MaplestoryOTFBold;
+            font-size: 18px; color: #3b3b3b;
+            height: 49px; width: 49px;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+            border-left: 1px solid #f0f0f0;
+        }
+
+        .company-btn:first-of-type {
+            left: 7px;
+            border-left: 1px solid #e7e7e7;
+            }
+
+        .company-btn:hover {background-color: #e7e7e7;}
+
+
+        #news-container {
+            border-collapse: collapse; width: 751px;
+            margin-left: -1px;
+            position: relative; bottom: 2px;
+            }
+
+        #news-container tr td {
+            height: 69px;
+            border: 1px solid #e7e7e7;
+            text-align: center;
+        }
+
+        #news-container img { text-align: center;
+        height: 20px;}
+
+        #news-container tr td:hover {background-color: #f5f5f5;}
+
+        .sub-banner {
+            height: 153px;
+            background-image: url('https://image.utoimage.com/preview/cp872722/2018/05/201805019675_500.jpg');
+            background-size: cover; background-repeat: no-repeat;
+            cursor: pointer; background-position: right center;
+        }
+
+        .hobby-box {height: 900px;}
+
+        #hobby-nav {height: 45px; line-height: 45px;}
+
+        #hobby-list {
+            float: left;
+            height: 43px; line-height: 43px;
+            border-bottom: 1px solid #e7e7e7;
+        }
+
+        #hobby-list li {
+            list-style-type: none;
+            float: left;
+            cursor: pointer;
+            padding: 0 10px;
+            font-size: 15px;
+        }
+
+        #hobby-list li:hover { background-color: #f5f5f5;}
+
+        .hobby-btn-one {
+            float: left;
+            border: none;
+            border-right: 1px solid #e7e7e7;
+            border-left: 1px solid #e7e7e7;
+            border-bottom: 1px solid #e7e7e7;
+            background-color: white;
+            height: 44px; width: 41px;
+            position: relative;
+            margin-left: -1px;
+            cursor: pointer;
+        }
+
+        .hobby-btn-one:hover {background-color: #f5f5f5;}
+
+        .hobby-btn {
+            float: right;
+            border: none;
+            border-left: 1px solid #e7e7e7;
+            border-right: 1px solid #e7e7e7;
+            border-bottom: 1px solid #e7e7e7;
+            background-color: white;
+            height: 44px; width: 41px;
+            cursor: pointer;
+        }
+
+        .hobby-btn.gt {
+            margin-right: -1px;
+            border-left: none;
+        }
+
+        .hobby-btn:hover {background-color: #f5f5f5;}
+
+
+
+        #animal {
+            background-color: #f5f5f5;
+            color: #0c0cd8;
+            font-weight: bold;
+            border-bottom: 3px solid #0c0cd8;
+        }
+
+        #hobby-container {
+            height: 835px;
+            display: grid; gap: 10px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            padding: 10px;
+
+        }
+
+        .animal-post {
+            border: 1px solid white;
+            cursor: pointer;
+        }
+
+        .animal-post:active {border: 1px dotted #696969}
+
+        #animal-empathy {
+            background-color: #3a3aaa; color: white;
+            font-family: KBIZHanmaumMyungjo;
+            padding: 20px 15px 15px 15px;
+        }
+
+        #animal-empathy #empathy-tittle {
+            font-size: 22px;
+            font-family: SEBANG_Gothic_Bold;
+            font-weight: bold;
+            }
+
+        #animal-empathy ul {
+         margin: 10px 0;
+        }
+
+        #animal-empathy ul li {
+            display: inline-block;
+            margin: 5px 3px;
+            font-size: 14px;
+            float: left;
+            list-style-type: none;
+        }
+
+        #hobby-container .animal-post.b {
+            grid-column: 2/4;
+            background-image: url('https://ichef.bbci.co.uk/news/660/cpsprodpb/DCE1/production/_104454565_mary-mcgowan_caught-in-the-act_00001294.jpg');
+            background-size: cover; background-repeat: no-repeat;
+            background-position: center;
+            position: relative
+            }
+
+
+        #b-deco {
+            height: 40px; width: 338px;
+            background-color: rgba(0, 0, 0, 0.548);
+            position: absolute;
+            bottom: 0px;
+            padding: 10px;
+            color: #a0a0a0;
+            font-size: 14px;
+            font-family: KBIZHanmaumMyungjo;
+        }
+
+        #b-deco:hover {
+            text-decoration: underline;
+        }
+
+        #b-deco p {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ececec;
+            margin-top: 5px;
+            font-family: none;
+        }
+
+        .animal-post.grid img {
+            width: 173px; height: 130px;
+            object-fit: cover; object-position: center;
+        }
+
+        .text1 {
+            font-size: 13px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .text1:hover { text-decoration: underline;}
+
+        .text2 {
+            font-size: 12px;
+            display: inline;
+        }
+
+        .text2:hover { text-decoration: underline;}
+
+        .animal-post button {
+            float: right;
+            position: relative;
+            right: 5px;
+        }
+
+
+        #animal-empathy ul li:last-of-type {margin-top: 10px;}
+
+        #animal-empathy ul li:hover {text-decoration: underline;}
+
+        .shopping {
+            height: 900px;
+        }
+
+        #shopping-nav {
+            height: 40px;
+            border-bottom: 1px solid #e7e7e7;
+            line-height: 40px;
+            padding-left: 10px;
+            font-family: SEBANG_Gothic_Bold;
+        }
+
+        #shopping-list {
+            float: right; line-height: 40px;
+        }
+
+        #shopping-list li{
+            list-style-type: none;
+            float: left;
+            padding: 0 10px;
+            color: #666666;
+            cursor: pointer;
+        }
+
+        #shopping-list li:last-of-type {
+            background-color: #f5f5f5;
+            color: #ff2119;
+            border-bottom: 3px solid #ff2119;
+        }
+
+        #shopping-list li:hover {background-color: #f5f5f5;}
+
+        #shopping-box{
+            height: 50px;
+            border-bottom: 1px solid #e7e7e7;
+            padding: 15px 10px 10px 18px;
+        }
+
+        #shoppingmal li {
+            list-style-type: none;
+            float: left;
+            color: gray;
+        }
+
+        #shoppingmal li a {
+            font-family: KBIZHanmaumMyungjo;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 5px;
+            }
+
+        #item-btn-con {float: right;}
+
+        #item-btn-con button {
+            background-color: white;
+            width: 30px; height: 30px;
+            border: 1px solid #9e9e9e;
+            font-weight: bold;
+            font-family: Katuri;
+            color: #202020;
+            cursor: pointer;
+        }
+
+        #item-btn-con p:first-letter {
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: -5px;
+        }
+        #item-page {
+            display: inline-block;
+            margin-right: 8px;
+            font-size: 14px;
+            }
+
+        #item-btn-con button:last-of-type {
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+        #item-grid {
+            margin-top: 40px;
+            height: 455px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+
+        .sp-item {
+            border: 1px solid #f7f7f7;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .sp-item:active {
+            border: 1px dotted #8d8d8d;
+        }
+
+        .sp-item p:hover { text-decoration: underline;}
+
+        .sp-item img {
+            width: 100px; height: 90px;
+            object-fit: cover;
+        }
+
+        .sp-item{
+            text-align: center;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .top3 {border-top: 1px solid white;}
+
+        #last-shopping {
+            height: 289px;
+            background-color: #f5f5f5;
+        }
+
+        #last-shopping p {
+            border-left: 3px solid rgb(134, 19, 138);
+            margin: 10px 15px;
+            padding-left: 10px;
+            font-family: SEBANG_Gothic_Bold;
+            float: left;
+        }
+
+        #last-shopping button {
+            float: right;
+            margin: 5px;
+            width: 25px; height: 25px;
+            background-color: white;
+            border: 1px solid #cccccc;
+            cursor: pointer;
+        }
+
+        .width-box {
+            clear: both;
+            padding: 0 15px;
+        }
+
+        .mini-item {
+            height: 73px;
+            background-color: white;
+            border: 1px solid rgb(233, 233, 233);
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .mini-item img {
+            float: left;
+            margin: 5px;
+            height: 63px; width: 120px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .text-box {
+            float: left;
+            padding:10px 20px;}
+
+        .text3 {
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .text4 {
+            font-size: 13px;
+            font-weight: bold;
+            color: #2a1ca8;
+        }
+
+        .card-item {
+            float: left;
+            margin: 10px;
+            height: 110px;
+            width: 350px;
+            cursor: pointer;
+        }
+
+        .card-item img {
+            float: left; width: 180px; height: 100px;
+            margin: 5px;
+            object-fit: cover; object-position: center;
+            border: 1px solid #e7e7e7;
+            margin-right: 13px;
+        }
+
+        .text-box2 {
+            padding-top: 10px;
+        }
+
+        .text5 {
+            font-size: 14px;
+            font-weight: bold; color:#00ad1d
+        }
+
+        .text6 {
+            font-weight: bold;
+            margin: 5px 0 7px 0;
+        }
+
+        .text7{
+            font-size: 12px;
+        }
+
+        .text7:hover {
+            text-decoration: underline;}
+
+        .banner-box{
+            height: 132px;
+        }
+        .last-banner{
+            height: 132px;
+            background-image: url('https://image.utoimage.com/preview/cp872722/2018/05/201805019703_500.jpg');
+            background-size: cover; background-repeat: no-repeat;
+            cursor: pointer; background-position: center;
+        }
+
+        .footer {
+            width: 1130px; height:80px;
+            margin:10px auto;
+        }
+
+        .footer span {
+            margin-right: 10px;
+            color: black;
+            cursor: pointer;
+        }
+
+
+        #footer-text-box {
+            margin: 50px 0;
+        }
+
+        .footer li {
+            list-style-type: none;
+            float: left;
+            margin-right: 10px;
+        }
+
+        .boldtext {
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        #footer-left{
+            float: left;
+        }
+
+        #footer-right {
+            float: right;
+            width: 400px; height: 200px;
+        }
+
+        #footer-right p {text-align: right;}
+
+        #footer-right span {text-align: right;}
+
+        .foot-item {
+            text-align: right;
+            float: right;
+            width: 145px;
+            margin-left: 40px;
+            margin-top: 50px;
+            cursor: pointer;
+        }
+
+        .foot-item img {
+            width: 50px; height: 50px;
+        }
+
+        .text-box3 {
+            float: left;
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <div class="top-service">
+                <a href="#" id="start-nv">네이버를 시작페이지로<button type="button" id="nv-btn">&gt;</button>|</a>
+                <a href="#" id="junior">쥬니어네이버</a>
+                <a href="#" id="happybean">해피빈</a>
+            </div>
+
+            <div id="logo">
+                <span id="logo-nv"><img src="https://t1.daumcdn.net/cfile/blog/99D269365B04F63213" width="55px" alt=""> NAVER</span>
+                <input id="search" type="text"><button id="search-btn">검색</button>
+            </div>
+        </div>
+        <div class="menunav">
+            <div class="container">
+                <ul class="gnb main-menu">
+                    <li>메일</li>
+                    <li>카페</li>
+                    <li>블로그</li>
+                    <li>지식iN</li>
+                    <li>쇼핑</li>
+                    <li>Pay</li>
+                    <li>▶TV</li>
+                </ul>
+                <ul class="gnb">
+                    <li>사전</li>
+                    <li>뉴스</li>
+                    <li>증권</li>
+                    <li>부동산</li>
+                    <li>지도</li>
+                    <li>영화</li>
+                    <li>뮤직</li>
+                    <li>책</li>
+                    <li>웹툰</li>
+                    <li class="plus">더보기 <sub>﹀</sub></li>
+                </ul>
+                <ul class="rank">
+                    <li><span id="rankwin">1 <span id="rankname">강원석</span></span><span class="plus"><sub>﹀</sub></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="left banner"></div>
+        <div class="right profile">
+            <div class="my-profile">
+                <img src="https://v.securities.miraeasset.com/resources/img/common/personal/ico_person_default.jpg" alt="profileimg" width="56" height="56">
+                <div id="userbox">
+                    <a href="#">코스모스 님</a>
+                    <a id="mybtn" href="#"><span>내정보</span> 🔒︎</a><br>
+                    <a href="#">메일<span>999<sup>+</sup></span></a>
+                    <a href="#">쪽지<span>20</span></a>
+                    <button id="profile-btn" type="button">로그아웃</button>
+                </div>
+            </div>
+            <div class="my-category">
+                <a href="#">알림</a>
+                <a href="#">MY구독</a>
+                <a href="#">메일</a>
+                <a href="#">카페</a>
+                <a href="#">블로그</a>
+                <a href="#">페이</a>
+                <a id="my-category" href="#">></a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="left newsbar">
+            <a class="main-company" href="#">연합뉴스 &gt;</a><span id="news-in">한·호주 정상회담…"수소 등 저탄소기술 협력" </span>
+            <ul class="news-category">
+                <li>네이버뉴스</li>
+                <li>연예</li>
+                <li>스포츠</li>
+                <li>경제</li>
+            </ul>
+        </div>
+        <div class="right weather">
+            <div id="day-box">
+                <div id="day-left">
+                    <span>06.14 (월)</span><span>부산진구 부전동 ></span>
+                </div>
+                <div id="day-right">
+                    <p id="day-page">1 / 5</p>
+                    <button class="day-btn" type="button">&lt;&nbsp;</button>
+                    <button class="day-btn" type="button">&nbsp;&gt;</button>
+                </div>
+            </div>
+            <div id="today-weather" >
+                <div class="1">
+                    <img class="weather-img" src="https://cdn.icon-icons.com/icons2/1903/PNG/128/iconfinder-weather-weather-forecast-cloudy-season-cloud-3859132_121213.png" width="70" height="75" alt="cloudy">
+                    <div class="weather-box"><h1 class="main-C" id="am">21<sup>℃</sup></h1>
+                    <span class="apC"><span id="cool">20°</span> / <span id="hot">32°</span></span></div>
+                </div>
+                <div id="next-weather">
+                    <div class="weather2">
+                        <img class="weather-img" src="https://cdn.icon-icons.com/icons2/1903/PNG/512/iconfinder-weather-weather-forecast-sunny-sun-cloudy-3859147_121233.png" width="40" alt="cloudy">
+                        <div>
+                            <h1 class="mini-C">20°</h1>
+                            <div class="am-pm">오늘 오전</div>
+                        </div>
+                    </div>
+                    <div class="weather2">
+                        <img class="weather-img" src="https://cdn.icon-icons.com/icons2/1903/PNG/512/iconfinder-weather-weather-forecast-sunny-rain-climate-3859146_121228.png" width="40" alt="cloudy">
+                        <div>
+                            <h1 class="mini-C">32°</h1>
+                            <div class="am-pm">오늘 오후</div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div id="weather-footer">
+                <span>날씨</span>
+                <span id="real-time">실시간 기상정보 확인하기</span>
+                <span>|&nbsp;&nbsp;&nbsp;<a href="#">주간예보</a></span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="left news-banner">
+            <div id="news-banner-nav" >
+                <a class="main-company" href="#">뉴스스탠스 &gt;</a>
+                <a href="#">전체 언론사</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="#">MY 뉴스</a>
+                <div id="main-company-right">
+                    <button class="company-btn" type="button">&lt;&nbsp;</button>
+                    <button class="company-btn" type="button">&nbsp;&gt;</button>
+                </div>
+                <table id="news-container">
+                    <tr>
+                        <td><a href="http://newsstand.naver.com/?list=&pcode=003" target="_blank"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/003.png" alt="뉴시스"></a></td>
+                        <td><a href="http://newsstand.naver.com/?list=&pcode=028" target="_blank"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/028.png" alt="한겨래"></a></td>
+                        <td><a href="http://newsstand.naver.com/?list=&pcode=005" target="_blank"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/005.png" alt="국민일보"></a></td>
+                        <td><a href="http://newsstand.naver.com/?list=&pcode=057" target="_blank"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/057.png" alt="MBN"></a></td>
+                        <td><a href="http://newsstand.naver.com/?list=&pcode=823" target="_blank"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/823.png" alt="UPI뉴스"></a></td>
+                        <td><a href="http://newsstand.naver.com/?list=&pcode=826" target="_blank"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/826.png" alt="톱데일리"></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://newsstand.naver.com/?list=&pcode=944" target="_blank"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/944.png" alt="나우뉴스"></a></td>
+                        <td><a href="http://newsstand.naver.com/?list=&pcode=959" target="_blank"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/959.png" alt="M이코노미뉴스"></a></td>
+                        <td><a href="http://newsstand.naver.com/?list=&pcode=312" target="_blank"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/312.png" alt="텐아시아"></a></td>
+                        <td><a href="http://newsstand.naver.com/?list=&pcode=930" target="_blank"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/930.png" alt="뉴스타파"></a></td>
+                        <td><a href="http://newsstand.naver.com/?list=&pcode=327" target="_blank"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/327.png" alt="뉴데일리"></a></td>
+                        <td><a href="http://newsstand.naver.com/?list=&pcode=144" target="_blank"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/144.png" alt="스포츠경향"></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://newsstand.naver.com/?list=&pcode=82="_blank"><img src="https://s.pstatic.net/static/newsstand/up/2021/0211/nsd01153196.png" alt="미디어스"></a></td>
+                        <td><a href="http://newsstand.naver.com/?list=&pcode=911" target="_blank"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/911.png" alt="농민신문"></a></td>
+                        <td><a href="http://newsstand.naver.com/?list=&pcode=029"target="_blank"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/029.png" alt="디지털타임스"></a></td>
+                        <td><a href="http://newsstand.naver.com/?list=&pcode=904" target="_blank"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/904.png" alt="JTBC"></a></td>
+                        <td><a href="http://newsstand.naver.com/?list=&pcode=975" target="_blank"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/975.png" alt="시사저널이코노미"></a></td>
+                        <td><a href="http://newsstand.naver.com/?list=&pcode=801" target="_blank"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/801.png" alt="위키리크스한국"></a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="right sub-banner"></div>
+    </div>
+    <div class="container">
+        <div class="left hobby-box">
+            <div id="hobby-nav">
+                <button class="hobby-btn-one" type="button">☰</button>
+                <ul id="hobby-list">
+                    <li>비즈니스</li>
+                    <li>FARM</li>
+                    <li>스쿨잼</li>
+                    <li>공연전시</li>
+                    <li>법률</li>
+                    <li id="animal">동물공감</li>
+                    <li>연애·결혼</li>
+                    <li>테크 </li>
+                    <li>감성충전</li>
+                </ul>
+                <button class="hobby-btn gt" type="button">&gt;</button>
+                <button class="hobby-btn" type="button">&lt;</button>
+            </div>
+            <div id="hobby-container">
+                <div class="animal-post" id="animal-empathy">
+                    <span id="empathy-tittle">동물공감</span><br>
+                    <div>ㅡ</div>
+                    <div>
+                        <ul>
+                            <li>프리포스트</li>
+                            <li>프리블로그</li>
+                            <li>동물공감TV</li>
+                            <li>오디오클립</li>
+                            <li>고양이 사전</li>
+                            <li>개 사전</li>
+                            <li>(주) 멋쟁이토마토</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="animal-post b">
+                    <div id="b-deco">
+                        <span>다라미 일기</span>
+                        <p>에그머니나 내 도토리 다 굴러가네…!</p>
+                    </div>
+                </div>
+                <div class="animal-post grid c">
+                    <img src="https://static.hubzum.zumst.com/hubzum/2019/08/08/14/b975969f6894484ca3b049cfa6fda972.jpg">
+                    <div class="text">
+                      <p class="text1">집사한테 혼나자 등 돌리고 삐침 어필하는 고양이..</p>
+                      <p class="text2">냥냥애옹</p>
+                    </div>
+                </div>
+                <div class="animal-post grid d">
+                    <img src="https://cdn.edujin.co.kr/news/photo/201808/19836_36545_849.jpg">
+                    <div class="text">
+                      <p class="text1">강아지 예방접종 놓치면 큰일…!</p>
+                      <p class="text2">멍멍병원</p> <button type="button">AD</button>
+                    </div>
+                </div>
+                <div class="animal-post grid e">
+                    <img src="https://news.moyiza.kr/data/files/2017/11/09/38501a6f7c2f8c6a4ed1a3152a975909.jpg">
+                    <div class="text">
+                      <p class="text1">순간포착 세상에 이런일이 TOP 10</p>
+                      <p class="text2">웃긴야생동물</p>
+                    </div>
+                </div>
+                <div class="animal-post grid f">
+                    <img src="https://cdn.crowdpic.net/list-thumb/thumb_l_D033E20FA5FA98C38CBB08013031FFA1.jpg">
+                    <div class="text">
+                      <p class="text1">소름돋는 무의식 심리테스트 7가지…</p>
+                      <p class="text2">심리연구소</p>
+                    </div>
+                </div>
+                <div class="animal-post grid g">
+                    <img src="https://cphoto.asiae.co.kr/listimglink/1/2019090310511545493_1567475476.jpeg">
+                    <div class="text">
+                      <p class="text1">'웃으며 걸어오는 벌금' 뜻밖의 별명 생긴 쿼카</p>
+                      <p class="text2">정희원</p>
+                    </div>
+                </div>
+                <div class="animal-post grid h">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHVktBJNUTO1HNgV_-sge3ZFaxtsxoGuGpxg&usqp=CAU">
+                    <div class="text">
+                      <p class="text1">개와 고양이 중 어떤 동물이 반려인을 더 사랑할까?</p>
+                      <p class="text2">반려동물백과사전</p>
+                    </div>
+                </div>
+                <div class="animal-post grid i">
+                    <img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F214E863354FD32AC23">
+                    <div class="text">
+                      <p class="text1">요리하는 남자가 대세! 신부에게 사랑받는 남자</p>
+                      <p class="text2">요리 레시피</p>
+                    </div>
+                </div>
+                <div class="animal-post grid j">
+                    <img src="https://t1.daumcdn.net/cfile/tistory/22098B3D5523D6E72E">
+                    <div class="text">
+                      <p class="text1">체험 가득한 봄나들이 추천 코스</p>
+                      <p class="text2">데일리</p>
+                    </div>
+                </div>
+                <div class="animal-post grid k">
+                    <img src="https://lifetrend.joins.com/_data/photo/2019/07/10/13415f6173f5d.jpg">
+                    <div class="text">
+                      <p class="text1">외국서 반한 맛, 집에서 즐겨요…</p>
+                      <p class="text2">냠냠쩝쩝</p>
+                    </div>
+                </div>
+                <div class="animal-post grid l">
+                    <img src="https://wwdoctor.com/theme/basic/img/sub/m_s_res9_img2.jpg">
+                    <div class="text">
+                      <p class="text1">환절기 감기 앓고 난 뒤, 목소리 안 돌아온다면…</p>
+                      <p class="text2">생활상식</p>
+                    </div>
+                </div>
+                <div class="animal-post grid m">
+                    <img src="https://cdn.eyesmag.com/content/uploads/posts/2020/06/12/gender-neutral-london-fashion-week-to-launch-with-digital-platform-1-2104b1f0-821d-4f85-9787-ccda8ecad0b4.jpg">
+                    <div class="text">
+                      <p class="text1">런던에서 스타트를 끊은 디지털 패션위크, 그 모습은?</p>
+                      <p class="text2">eyesmag</p>
+                    </div>
+                </div>
+                <div class="animal-post grid n">
+                    <img src="https://cdn.gamsanews.co.kr/news/photo/201304/2015_1870_1112.jpg">
+                    <div class="text">
+                      <p class="text1">감사일기 : 재해석의 놀라운 기적</p>
+                      <p class="text2">행복나눔신문</p>
+                    </div>
+                </div>
+                <div class="animal-post grid o">
+                    <img src="http://res.heraldm.com/phpwas/restmb_idxmake.php?idx=507&simg=/content/image/2019/10/16/20191016000158_0.jpg">
+                    <div class="text">
+                      <p class="text1">
+                        커피 vs 차 카페인, 어떻게 다를까</p>
+                      <p class="text2">카페알바생</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right shopping">
+            <div id="shopping-nav">
+                <span>쇼핑</span>
+                <ul id="shopping-list">
+                    <li>상품</li>
+                    <li>쇼핑몰</li>
+                    <li>MEN</li>
+                </ul>
+            </div>
+            <div id="shopping-box">
+                <ul id="shoppingmal">
+                    <li><a href="#">G마켓</a>·</li>
+                    <li><a href="#">옥션</a>·</li>
+                    <li><a href="#">11번가</a>·</li>
+                    <li><a href="#">위메프</a>·</li>
+                    <li><a href="#">티몬</a>·</li>
+                    <li><a href="#">올리브영</a></li>
+                    <li><a href="#">이마트몰</a>·</li>
+                    <li><a href="#">GS샵</a>·</li>
+                    <li><a href="#">CJmall</a>·</li>
+                    <li><a href="#">신세계몰</a>·</li>
+                    <li><a href="#">롯데몰</a></li>
+                </ul>
+            </div>
+            <div id="item-btn-con">
+                <p id="item-page">1 /8</p>
+                <button type="button">&lt;</button>
+                <button type="button">&gt;</button>
+            </div>
+            <div id="item-grid">
+                <div class="sp-item top3">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTt6Tv23Ku3k6KW7YO-vUm5bUos8ME90gyAzRzK4cs9o83Hggkcj_ZvRQf0R3WSb9BthXYYaaHhf5n73L-wfCbwkAtnXZSAPlMwnlFaROvr4g997MfEBc45LA&usqp=CAE" alt="">
+                    <p>붕뜨는 앞머리 9900원에 1+1</p>
+                </div>
+                <div class="sp-item top3">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRj1mFxioh4L9VkQRGdA9VQD2TBD6aNQVGkR17Endhd-iM0gSzcDwvSMvHpdpUhjhsc0X79gOkYbIizKfUgvSJsvmOC9Z923Q&usqp=CAY" alt="">
+                    <p>맨투맨 인기모음<br>
+                        파격적인 가격!</p>
+                </div>
+                <div class="sp-item top3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2-MbHAqAt8CSwEz8aX9_zizYHA_WmBXRtMWUdUrnZvrww5jc-CvgV1-BtUavc3lswBRRjOfYZ&usqp=CAc" alt="">
+                    <p>나이키 정가세일 쇼핑은 타이밍!</p>
+                </div>
+                <div class="sp-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAhkkcc_AVJyPhH9JxL9R_Qt7mUenVCxgqznEJaXmo0GTJI-thY5XM-9IQiZqEewstQhCKF5aH&usqp=CAc" alt="">
+                    <p>여성 인기로퍼<br>39000원 균일가!</p>
+                </div>
+                <div class="sp-item">
+                    <img src="data:image/jpeg;base64,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" alt="">
+                    <p>어떻게 이런걸<br>생각해냈을까?</p>
+                </div>
+                <div class="sp-item">
+                    <img src="data:image/jpeg;base64,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" alt="">
+                    <p>5개 이상 구매시 반팔티가 꽁짜??</p>
+                </div>
+                <div class="sp-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTxzk7uS62hiM6tO5d8bqzCjur-2rDJJ8tpw&usqp=CAU" alt="">
+                    <p>시원한 정장팬츠 특가세일</p>
+                </div>
+                <div class="sp-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVxw2vChMbQaOZZFPXCT6fptTF3rwMeiAnSScxCXve3-oAEpMXqW5liubPG9ua62OjWjWzxG7Q&usqp=CAc" alt="">
+                    <p>더위에도 끄떡 없는 쿠션이 2+1</p>
+                </div>
+                <div class="sp-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpXePtmv4Iy4pbHdBSch9T3lz0o2UIEnkaeB56SjGw85vpJS4zk3EFiqPQLy8&usqp=CAc" alt="">
+                    <p>간편한 접이식<br>테이블</p>
+                </div>
+            </div>
+            <div id="last-shopping">
+                <div>
+                    <p>어쩌구쇼핑</p>
+                    <button>✔️</button>
+                </div>
+                <div class="width-box">
+                    <div class="mini-item">
+                        <img src="http://mromart.co.kr/web/product/big/201806/1338_shop1_15294830936608.jpg" alt="">
+                        <div class="text-box">
+                            <div class="text3">4단 강풍<br>미니선풍기</div>
+                            <div class="text4">앱 스트리움</div>
+                        </div>
+                    </div>
+                    <div class="mini-item">
+                        <img src="http://images.coocha.co.kr//upload/2021/01/11st-1/28/thumb4_486967115.jpg" alt="">
+                        <div class="text-box">
+                            <div class="text3">여름이니까~!<br>시원하게 쿨팬츠</div>
+                            <div class="text4">모던헤즈</div>
+                        </div>
+                    </div>
+                    <div class="mini-item">
+                        <img src="https://cdn.wadiz.kr/ft/images/green002/2019/0514/20190514163924504_95.jpg/wadiz/format/jpg/quality/80/optimize" alt="">
+                        <div class="text-box">
+                            <div class="text3">케이스 30% SALE<br>미니선풍기</div>
+                            <div class="text4">홍반장케이스</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="left banner-box">
+            <div class="card-item">
+                <img src="https://media.vlpt.us/images/jdd04026/post/06313025-fde9-45ac-be1b-3700dc31e939/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202020-05-12%20%EC%98%A4%ED%9B%84%209.21.15.png" alt="">
+                <div class="text-box2">
+                    <div class="text5">부스트캠프 2021</div>
+                    <div class="text6">참가자를 모집합니다</div>
+                    <p class="text7">최고의 동료 친구와 함께<br>풀스택 웹 개발자로 성장</p>
+                </div>
+            </div>
+            <div class="card-item">
+                <img src="https://www.yieldify.com/wp-content/uploads/2020/07/What_Is_GMV_Featured.jpg" alt="">
+                <div class="text-box2">
+                    <div class="text5">GMV 2021</div>
+                    <div class="text6">IT가입 해외진출상담</div>
+                    <p class="text7">최대규모 IT미디어 강연<br>7월 31일 접수 마감</p>
+                </div>
+            </div>
+        </div>
+        <div class="right last-banner"></div>
+    </div>
+
+    <div class="container footerbox">
+        <div class="footer">
+            <div id="footer-left">
+                <h4>공지사항</h4>
+                <div id="footer-text-box">
+                    <span class="text5">어쩌구</span><span class="text7">크리에이터</span><span class="text7">슈퍼비즈니스</span><br>
+                    <span class="text5">어쩌구</span><span class="text7">비즈니스·광고</span><span class="text7">스토어 개설</span class="text7"><span class="text7">사업자 등록</span><br>
+                    <span class="text5">어쩌구</span><span class="text7">개발자센터</span><span class="text7">오픈 어쩌구</span><span class="text7">오픈소스</span><span class="text7">네이버뭐시기</span><span class="text7">네이버 캠스</span><br>
+                </div>
+                <ul>
+                    <li class="text7">회사소개</li>
+                    <li class="text7">인사채용</li>
+                    <li class="text7">채용제안</li>
+                    <li class="text7">이용약관</li>
+                    <li class="text7 boldtext">개인정보처리방침</li>
+                    <li class="text7">청소년보호정책</li>
+                    <li class="text7">네이버검색</li>
+                    <li class="text7">고객센터</li>
+                    <li class="text7 boldtext">ⓒNAVER COM</li>
+                </ul>
+            </div>
+            <div id="footer-right">
+                <p class="text3">서비스 전체보기 ></p>
+                <div>
+                    <div class="foot-item">
+                        <img src="https://img.etnews.com/photonews/2104/1407340_20210426150400_836_0004.jpg" alt="">
+                        <div class="text-box3">
+                                <div class="text3">프로젝트 꽃</div>
+                                <div class="text7">바로가기</div>
+                            </div>
+                        </div>
+                    <div class="foot-item">
+                        <img src="https://cdn.imweb.me/thumbnail/20210208/8bcebdfb48c69.png" alt="">
+                        <div class="text-box3">
+                            <div class="text3">새로운<br>네이버모바일</div>
+                            <div class="text7">이용 안내</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

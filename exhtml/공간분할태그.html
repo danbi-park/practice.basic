@@ -1,0 +1,85 @@
+                                 <!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>공간분할태그</title>
+
+  <style media="screen">
+    * {
+      margin: 0;
+      padding: o;
+    }
+
+    body {
+      margin: 0 auto;
+      width: 900px;
+    }
+
+
+    #header {
+      background: rgb(242, 226, 247);
+      width: 900px;
+      height: 150px;
+    }
+
+    #left {
+      background: rgb(219, 219, 219);
+      width: 200px;
+      height: 600px;
+      display: inline-block;
+      /* 인라인처럼 쓰지만 너비를 줄 수 있다. */
+    }
+
+    #content {
+      background: rgba(46, 89, 215, 0.2);
+      width: 700px;
+      height: 600px;
+      display: inline-block;
+    }
+
+    #footer {
+      background: black;
+      width: 900px;
+      height: 150px;
+    }
+    h1{
+      background:pink;
+      text-align: center;
+      /* display: inline; */
+    }
+    span{
+      background: yellow;
+      text-align: center;
+      /* display: block; */
+    }
+    p{
+      color:white;
+      display: inline-block;
+      text-align: center;
+      width:500px;
+      background: rgb(196, 191, 255);
+      /* inline처럼 자기만의 콘텐츠를 가지면서 block처럼 align, width설정 가능 */
+    }
+
+
+  </style>
+
+</head>
+
+<body>
+
+  <div id="header">
+    <h1>div태그 활용</h1>
+  </div>
+
+  <div id="left"><span>left</span></div><div id="content">content</div>
+
+  <div id="footer"><p>footer</p>
+  </div>
+
+
+
+</body>
+
+</html>

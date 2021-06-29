@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+    $(function(){
+      $('h1').hover(function(){
+        $(this).css('background','pink');
+      }, function(){
+        $(this).css('background','white');
+      }).css('cursor','pointer');
+
+      $('button').click(function(){
+        if($('#id').val() == '') {
+          alert('아이디를 입력해주세요');
+          $('#id').focus() ;
+          return;
+        }
+
+        if($('#pw').val() == '') {
+          alert('비밀번호를 입력해주세요');
+          $('#pw').focus() ;
+          return;
+        }
+
+        $('form').submit();
+
+    });
+  });
+
+    </script>
+  </head>
+  <body>
+    <h1>click</h1>
+    <form class="" action="index.html" method="post">
+      <input type="text" id="id" value="">
+      <input type="text" id="pw" value="">
+      <button type="button" name="button">로그인</button>
+    </form>
+  </body>
+</html>

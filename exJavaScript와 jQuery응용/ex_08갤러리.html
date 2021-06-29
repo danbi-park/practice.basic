@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+    div.item:nth-child(0) {
+      background: rgb(151, 229, 240);
+    }
+
+    div.item:nth-child(1) {
+      background: rgb(185, 176, 223);
+    }
+
+    div.item:nth-child(2) {
+      background: pink;
+    }
+
+    div.item:nth-child(3) {
+      background: burlywood;
+    }
+
+    div.item:nth-child(4) {
+      background: rgb(151, 229, 240);
+    }
+
+    div.item:nth-child(5) {
+      background: rgb(185, 176, 223);
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    //스타일주기
+    $(function() {
+      var width = $('[data-role="slider"]').attr('data-width');
+      var height = $('[data-role="slider"]').attr('data-height');
+      var count = $('[data-role="slider"] div.item').length;
+
+      $('[data-role="slider"]').css({
+        position: "relative",
+        overflow: "hidden",
+        width: width,
+        height: height
+      }).find('.container').css({
+        position: 'absolute',
+        width: width * count
+      }).find('.item').css({
+        width: width,
+        height: height,
+        float: 'left'
+      });
+
+
+//이벤트 주기
+    var currentPage = 0;
+    //왼쪽버튼
+    $('button:first-of-type').click(function() {
+      if (currentPage > 0) {
+        currentPage = currentPage - 1;
+        $('.container').css('left', -currentPage * width);
+			//$('.container').animate({'left': -currentPage * width}, 300);
+      }else{
+          currentPage = count-1;
+          $('.container').css('left', -currentPage * width);
+				//$('.container').animate({'left': -currentPage * width}, 300);
+          }
+    });
+
+    //오른쪽버튼
+    $('button:last-of-type').click(function() {
+      if (currentPage < count - 1) {
+        currentPage = currentPage + 1;
+      $('.container').animate({'left': -currentPage * width}, 300);
+      }else{
+          currentPage = 0;
+        $('.container').css('left', -currentPage * width).animate({'left': -currentPage * width}, 300);
+        }
+      });
+  });
+
+  </script>
+</head>
+
+<body>
+  <!-- 속성 선택자 -->
+  <div data-role="slider" class="" data-width="500" data-height="300">
+    <div class="container">
+      <div class="item">
+        <h1>3</h1>
+      </div>
+      <div class="item">
+        <h1>1</h1>
+      </div>
+      <div class="item">
+        <h1>2</h1>
+      </div>
+      <div class="item">
+        <h1>3</h1>
+      </div>
+      <div class="item">
+        <h1>1</h1>
+      </div>
+    </div>
+  </div>
+  <button type="button" name="button">←</button>
+  <button type="button" name="button">→</button>
+</body>
+
+</html>

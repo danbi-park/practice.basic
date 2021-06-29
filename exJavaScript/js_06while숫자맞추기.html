@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <script type="text/javascript">
+    // var num = Math.floor(Math.random()*100) + 1; //0부터 99까지 나오는 거니까 +1을 주는 거임
+    // // document.write(num);
+    // var input = prompt("1부터 100사이의 숫자 맞추기 게임입니다.\n" +
+    //                   "숫자를 입력하세요");
+    //     if(input >= num){
+    //       document.write(input + "보다 작습니다.")
+    //     } else if(input <= num){
+    //     document.write(input + "보다 큽니다.")
+    //   }else{
+    //     document.write("정답 !!")
+    //   }
+
+
+    //선생님 풀이
+    var num = Math.floor(Math.random() * 100) + 1;
+    document.write("정답: " + num + "<br>");
+    var count = 0;
+    while (true) { //true면 무한루프임! 정답과 내가 입력한 값이 같을 경우에만 종료됨
+      var input = prompt("1부터 100사이의 숫자 맞추기 게임입니다.\n" +
+        "숫자를 입력하세요");
+        if(input == ''){
+          continue; //while문의 처음으로 간다.
+        }
+        count++;
+        if (input == num) {
+          alert("정답입니다.");
+          document.write(count + "번 만에 맞추셨습니다.")
+          break; //while문을 끝낸다.
+        } else if (input < num) {
+          alert("작습니다.");
+        } else {
+          alert("큽니다.");
+        }
+    }
+
+  </script>
+
+
+<body>
+
+</body>
+
+</html>

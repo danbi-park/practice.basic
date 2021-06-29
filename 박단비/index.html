@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Homepage</title>
+
+  <style media="screen">
+    html, body{
+      min-height:1000px;
+    }
+
+    .header, .nav,.section,.container {
+      margin: 0 auto;
+      padding: 0;
+      width: 1080px;
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+
+    .header {
+      margin: 0px auto;
+      padding: 20px;
+      width: 1080px;
+      height: 300px;
+      margin-bottom: 8px;
+      overflow: hidden;
+      background-image: url('../박단비/cake.jpg');
+      background-size: 100%;
+      background-position: 0px 80%;
+    }
+
+    h1 {
+      color: #807F89;
+      height:300px;
+      text-shadow: 5px 5px 5px rgba(167, 167, 167, 0.65);
+    }
+
+    .left {
+      float: left;
+      width:  194px;
+      height: 600px;
+      background: rgba(252, 185, 124, 0.34);
+    }
+
+    .right {
+      float: right;
+      width:880px;
+      height: 600px;
+      background: rgba(255, 210, 130, 0.49);
+    }
+
+    .gnb {
+      float: left;
+      padding: 8px 0;
+      color: rgb(82, 123, 148);
+
+    }
+
+    .gnb li {
+      list-style: none;
+      display: inline-block;
+      padding-left: 16px;
+      cursor: pointer;
+
+    }
+
+    .gnb li:nth-of-type(1) {
+      padding-left: 0px;
+    }
+
+    #btnLogin{
+      list-style: none;
+      float: right;
+      padding: 8px 0;
+      margin: 5px;
+      width:80px;
+      text-align: center;
+      background: #D7DBD1;
+      cursor: pointer;
+      border-radius:20px;
+      border: none;
+    }
+
+    #btnLogin:hover{
+      background:#BBC7BA;
+      color:white;
+    }
+
+    #btnSignin{
+      list-style: none;
+      float: right;
+      padding: 8px 0;
+      margin: 5px;
+      width:80px;
+      text-align: center;
+      background: #D7DBD1;
+      cursor: pointer;
+      border-radius:20px;
+      border: none;
+    }
+
+    #btnSignin:hover{
+      background:#BBC7BA;
+      color:white;
+    }
+
+
+    .btnMore {
+      border: none;
+      margin-left: 25px;
+      color: gray;
+      font-size: 12pt;
+      cursor: pointer;
+      background: white;
+    }
+
+
+    .footer {
+      height: 80px;
+      background: rgba(66, 49, 49, 0.74);
+    }
+  </style>
+
+<script>
+  window.onload =function(){
+    document.querySelector('#btnLogin').onclick = function() {
+      location.href= "login.html";
+    }
+    document.querySelector('#btnSignin').onclick = function() {
+      location.href= "signin.html";
+    }
+  }
+</script>
+
+
+</head>
+
+
+<body>
+
+  <div class="header">
+    <h1>Bakery Store</h1>
+  </div>
+
+    <div class="nav">
+      <ul class="gnb">
+        <li>전체상품</li>
+        <li>쿠키커터</li>
+        <li>수제몰드</li>
+        <li>베이킹소품</li>
+        <li>잡화</li>
+        <li>지비츠</li>
+        <li>Q&A</li>
+      </ul>
+
+      <ul class="login">
+        <button id="btnSignin" type="button" name="button">Sign-in</button>
+        <button id="btnLogin" type="button" name="button">Log-in</button>
+      </ul>
+    </div>
+
+
+    <div class="section">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
+
+
+    <div class="section">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
+
+
+    <div class="container">
+      <div class="footer"></div>
+    </div>
+
+
+
+</body>
+</html>

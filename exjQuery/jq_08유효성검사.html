@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(function() {
+      var numRegExp = RegExp(/[0-9]$/g); //1.숫자정규식을 선언을 함
+
+      $('form').submit(function(event) {
+        var name = $('#name').val();
+        if ($('#name').val() == '') {
+          alert('이름을 입력해주세요');
+          $('#name').focus();
+          return false;
+        }
+        if (name.replace(/[가-힣]/g, '').length == 0) {
+          alert('과정을 진행합니다.');
+        } else {
+          alert('한글이름을 입력해주세요');
+          event.preventDefault();
+          $('#name').val(''); //안에 내용을 비워버릴수도 있음
+          $('#name').focus();
+        }
+      });
+
+      $('#mobile1, #mobile2').on({
+        'keyup': function(e){numCheck(e,numRegExp,this);},
+        // 'keydown': function(e){numCheck(e,numRegExp,this);},
+        'keypress': function(e){numCheck(e,numRegExp,this);}
+      });
+    });
+
+    function numCheck(e,numRegExp,item){
+        if($(item).attr('id') == $('#mobile2').attr('id')
+          && $(item).val().length == 0){
+            $('#mobile1').focus();
+        }
+        if(numRegExp.test($(item).val())) {
+          // $('#notice').text('숫자');
+          if($(item).attr('id') == $('#mobile1').attr('id')
+            && $(item).val().length >3){
+              $('#mobile2').focus();
+          }
+        } else {
+          $(item).val($(item).val().replace(/[^0-9]/g,''));
+        }
+    }
+  </script>
+</head>
+
+<body>
+  <form class="" action="index.html" method="post">
+    <label for="name">이름</label>
+    <input id="name" type="text" name="name" value=""><br><br>
+    <label for="mobile1">전화번호</label>
+    <select class="" name="">
+      <option selected value="010">010</option>
+      <option value="011">011</option>
+      <option value="016">016</option>
+    </select> - <input type="text" name="mobile1" id="mobile1" value="" maxlength="4" size="4"> - <input type="text" name="mobile2" maxlength="4" size="4" id="mobile2" value=""><br><br>
+    <button type="submit" name="button">확인</button><br>
+    <span id="notice"></span>
+
+
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>변수</title>
+
+  <script type="text/javascript">
+    var num; //undefined
+    var num = true; //boolean
+    var num = 10; //number
+    var num ='hello'; //string
+    var num = function(){}; //function
+    var num =[0,1,2,3,4]; //object (배열)
+    var num = {name:'tom', age:10}; //object (객체)
+    console.log(typeof(num));
+
+    num2= 10; //num3 =20;
+
+    big_int = Math.pow(10,1000);
+    _long_int = Math.pow(10,1000);
+    console.log(typeof(big_int));
+    document.write(big_int);
+    document.write(_long_int);
+
+    function Person(name,gender) {
+      this.name = name;
+      this.gender = gender;
+      this.sayhello = function(){
+        alert(this.name + ' said "hello"');
+      }
+    }
+
+    p = new Person('PDB');
+    p.sayhello();
+    alert(p.name);
+
+  </script>
+</head>
+
+
+<body>
+
+</body>
+
+</html>

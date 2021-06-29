@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+    form {
+      width: auto;
+    }
+    #span{
+      display:inline-block;
+      margin-bottom: 30px;
+    }
+  </style>
+
+  <script type="text/javascript">
+    window.onload = function() {
+      document.getElementById('btnSubmit').onclick = function() {
+        name = document.getElementById('name').value;
+
+        if (name == undefined || name == '') {
+          alert('작성자를 확인해주세요');
+          document.getElementById('name').focus();
+          return;
+        }
+        document.frm.submit();
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+  <div><h1>글 작성하기</h1></div>
+  <form name="frm" action="index.html" method="post">
+    <div><label for="name">작성자 </label><input type="text" name="작성자" id="name" value=""></div>
+    <label for="id">아이디 </label><input type="text" name="아이디" id="id" value=""><br>
+    <label for="email">이메일 </label><input type="text" name="이메일" id="email" value="">@<select value="">
+      <option>naver.com</option>
+      <option>gmail.com</option>
+      <option>daum.co.kr</option>
+    </select><br>
+    휴대폰 <select class="" name="mobile">
+      <option value="010" selected>010</option>
+      <option value="011">011</option>
+      <option value="012">012</option>
+    </select>-<input id="number" type="text" name="휴대폰" id="name" value="">-<input id="number" type="text" name="휴대폰" id="name" value=""><br>
+    글제목 <input type="text" name="글제목" id="name" value=""><br>
+    <div id="span">내용</div><div id="span"><textarea name="name" rows="8" cols="80"></textarea></div>
+    <br>
+<!-- 이렇게 div에 id를 달아 inline속성으로 주면 옆에 붙일 수 있음 -->
+
+    <button type="button" id="btnSubmit">제출</button>
+    <button type="reset">취소</button>
+
+
+  </form>
+
+
+
+
+</body>
+
+</html>

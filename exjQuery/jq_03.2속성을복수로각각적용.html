@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+//   $(function(){
+//     var colors = ['red','orange','yellow','green','blue','navy','purple'];
+//     $('h1').css('background', function(i){
+//       return colors[i];
+//     });
+// });
+//
+//   $(function(){
+//     var colors = ['red','orange','yellow','green','blue','navy','purple'];
+//     $('h1').each(function(i, item){
+//       $(item).css({'background': colors[i],'margin':'0px'}).html(colors[i]);
+//     });
+// });
+
+  $(function(){
+    var str = '';
+    for(let i=0;i<255;i++){
+      str += "<div></div>"}
+      $('body').html(str);
+
+      //객체를 입력해 속성 지정
+      $('div').css({
+    'height': '3px',
+    'background': function(i){
+       return 'rgb('+ i + ',' + i + ',' + i +')';
+       }
+     });
+
+     //each문을 이용해 속성지정
+     $('div').each(function(i, item){
+       $(item).css('height','2px').css('background',
+       'rgb('+ i + ',' + i + ',' + i +')');
+     });
+  });
+
+
+
+  </script>
+  </head>
+
+  <body>
+<h1>Colors</h1>
+<h1>Colors</h1>
+<h1>Colors</h1>
+<h1>Colors</h1>
+<h1>Colors</h1>
+<h1>Colors</h1>
+<h1>Colors</h1>
+  </body>
+</html>

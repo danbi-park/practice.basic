@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Welcome NEW</title>
+
+  <style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .cptBox {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -150px;
+      margin-top: -300px;
+    }
+
+    .outbox {
+      background: #fffada;
+      width: 300px;
+      height: 450px;
+      border-radius: 20px;
+      border: #e8db90 solid 2px;
+
+    }
+
+    .inbox{
+      text-align:center;
+    }
+
+
+    legend {
+      text-align: center;
+      font-weight: bold;
+      font-size: 15pt;
+      color: #555555;
+    }
+
+
+    button {
+      width: 100px;
+      padding: 4px;
+      background: #ffc9c9;
+      box-shadow: 1px 2px 3px rgb(147, 147, 147);
+      border-radius: 20px;
+      border: solid 2px rgba(245, 153, 153, 0.86);
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgb(75, 73, 73);
+    }
+
+    button:hover {
+      background: rgba(245, 153, 153, 0.86);
+      border-radius: 20px;
+      border: solid 2px #ffc9c9;
+      color: black;
+    }
+    .inbox img{
+      border-radius:90px;
+      margin:20px;
+    }
+    .inbox{
+      padding:30px;
+    }
+    .inbox p{
+      margin:20px;
+      font-size:20px;
+      font-weight: 600;
+      color:rgb(92, 58, 58);
+    }
+  </style>
+  <script>
+    window.onload = function(){
+      document.getElementById('btn').onclick = function(){
+        location.href = "index.html";
+      }
+
+    }
+
+  </script>
+</head>
+
+<body>
+
+
+    <form style="position:absolute" class="cptBox" action="index.html" method="post">
+
+      <fieldset class="outbox">
+        <legend>Complete!</legend>
+        <div class="inbox">
+          <img src="http://placekitten.com/150/155" alt="고양축">
+          <p>회원가입을<br>축하드립니다!!🥳🥳</p>
+          <button id="btn" type="button" name="button">HOME</button>
+        </div>
+      </fieldset>
+    </form>
+
+
+</body>
+</html>

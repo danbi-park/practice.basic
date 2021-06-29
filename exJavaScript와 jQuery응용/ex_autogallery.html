@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style></style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      colors = ['blueviolet', 'pink', 'burlywood'];
+      colors.unshift(colors[colors.length - 1]); //배열 앞에 추가
+      colors.push(colors[1]); //배열 뒤에 추가
+      console.log(colors.length);
+      for (var i = 0; i < colors.length; i++) console.log(colors[i]);
+
+      $('.container').prepend($('.item:last-child').clone());
+      $('.container').append($('.item:nth-child(2)').clone());
+      $('.item').each(function(i) {
+        $(this).css('background', colors[i]);
+      });
+      //$('.item').css('background', function(i){return colors[i];});
+
+      width = $('[data-role="slider"]').attr('data-width');
+      height = $('[data-role="slider"]').attr('data-height');
+      count = $('[data-role="slider"] div.item').length; //5
+
+      $('[data-role="slider"]').css({
+        position: 'relative',
+        overflow: 'hidden',
+        width: width,
+        height: height
+      }).find('.container').css({
+        position: 'absolute',
+        width: count * width,
+        overflow: 'hidden',
+        left: -width
+      }).find('.item').css({
+        width: width,
+        height: height,
+        float: 'left'
+      });
+    });
+
+    $(document).ready(function() {
+      var currentPage = 1;
+      setInterval(function() {
+        if (currentPage < count - 1) {
+          currentPage++;
+        } else {
+          $('.container').animate({
+            'left': -1 * width
+          }, 0);
+          currentPage = 2;
+        }
+        $('.container').animate({
+          left: -currentPage * width
+        }, 300);
+      }, 1000);
+    });
+  </script>
+</head>
+
+<body>
+  <div data-role="slider" data-width="500" data-height="300">
+    <div class="container">
+      <div class="item">
+        <h1>1</h1>
+      </div>
+      <div class="item">
+        <h1>2</h1>
+      </div>
+      <div class="item">
+        <h1>3</h1>
+      </div>
+    </div>
+  </div>
+  <button type="button" name="button">←</button>
+  <button type="button" name="button">→</button>
+</body>
+
+</html>

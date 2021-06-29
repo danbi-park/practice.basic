@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"></script>
+    <style media="screen">
+      table,tr,td,th{
+        border-collapse: collapse;
+        border: 1px solid #000;
+      }
+    </style>
+    <script>
+    //java와 jquery를 혼용해서 쓸 수 있음
+
+    function delCell(row){
+      var table = document.querySelector('table #tblBody');
+      var temp = row.rowIndex -1;
+      table.deleteRow(temp);
+
+      // var row = cell.parentNode.parentNode;
+    }
+
+
+      $(function(){
+      var cnt = 0;
+        document.querySelector('button').onclick = function(){
+        var tbl = document.querySelector('table');
+        var newRow = tbl.insertRow();
+        var cellNo = newRow.insertCell();
+        var cellName = newRow.insertCell();
+        var cellMobile = newRow.insertCell();
+        var cellDel = newRow.insertCell();
+        cellNo.innerHTML = ++cnt;
+        cellName.innerHTML = 'PDB';
+        cellMobile.innerHTML = '010-7157-0271';
+        cellDel.innerHTML = '<button onclick = "delCell(this.parentNode.parentNode)">삭제</button>'; //행의 객체를 매개변수로 넘김 맨위에 row
+
+        };
+      });
+    </script>
+  </head>
+
+  <body>
+<button type="button" name="button">추가</button><br><br>
+<table width="500">
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>이름</th>
+      <th>전화번호</th>
+      <th>삭제</th>
+    </tr>
+  </thead>
+
+<tbody id="tblBody">
+  <tr>
+  </tr>
+</tbody>
+
+
+</table>
+  </body>
+</html>
